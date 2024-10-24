@@ -14,15 +14,8 @@ public class InventoryUI : MonoBehaviour
             ItemDisplayUI display = Instantiate(itemDisplayPrefab, transform).GetComponent<ItemDisplayUI>();
             ItemDisplays.Add(display);
         }
+
         UpdateUI();
-    }
-    private void OnEnable()
-    {
-        PlayerCollection.playerCollected += UpdateUI;
-    }
-    private void OnDisable()
-    {
-        PlayerCollection.playerCollected -= UpdateUI;
     }
     public void UpdateUI()
     {

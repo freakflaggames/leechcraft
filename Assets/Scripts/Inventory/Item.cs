@@ -15,7 +15,3 @@ public class DefaultItemObject : ItemObject
 {
     
 }
-public class Item : MonoBehaviour
-{
-    public ItemObject item;
-}
