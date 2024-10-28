@@ -1,5 +1,6 @@
 ﻿using System;
 using Ink.Runtime;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,8 +25,9 @@ public class BasicInkExample : MonoBehaviour {
 	// Destroys all the old content and choices.
 	// Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
 	void RefreshView () {
+
 		// Remove all the UI on screen
-		RemoveChildren ();
+		//RemoveChildren ();
 		
 		// Read all the content until we can't continue any more
 		while (story.canContinue) {
@@ -55,6 +57,7 @@ public class BasicInkExample : MonoBehaviour {
 				StartStory();
 			});
 		}
+
 	}
 
 	// When we click the choice button, tell the story to choose that choice!
@@ -65,33 +68,33 @@ public class BasicInkExample : MonoBehaviour {
 
 	// Creates a textbox showing the the line of text
 	void CreateContentView (string text) {
-		Text storyText = Instantiate (textPrefab) as Text;
+		TextMeshProUGUI storyText = Instantiate (textPrefab) as TextMeshProUGUI;
 		storyText.text = text;
-		storyText.transform.SetParent (canvas.transform, false);
+		storyText.transform.SetParent (container.transform, false);
 	}
 
 	// Creates a button showing the choice text
 	Button CreateChoiceView (string text) {
 		// Creates the button from a prefab
 		Button choice = Instantiate (buttonPrefab) as Button;
-		choice.transform.SetParent (canvas.transform, false);
+		choice.transform.SetParent (container.transform, false);
 		
 		// Gets the text from the button prefab
-		Text choiceText = choice.GetComponentInChildren<Text> ();
+		TextMeshProUGUI choiceText = choice.GetComponent<TextMeshProUGUI> ();
 		choiceText.text = text;
 
-		// Make the button expand to fit the text
-		HorizontalLayoutGroup layoutGroup = choice.GetComponent <HorizontalLayoutGroup> ();
-		layoutGroup.childForceExpandHeight = false;
+		// // Make the button expand to fit the text
+		// HorizontalLayoutGroup layoutGroup = choice.GetComponent <HorizontalLayoutGroup> ();
+		// layoutGroup.childForceExpandHeight = false;
 
 		return choice;
 	}
 
 	// Destroys all the children of this gameobject (all the UI)
 	void RemoveChildren () {
-		int childCount = canvas.transform.childCount;
+		int childCount = container.transform.childCount;
 		for (int i = childCount - 1; i >= 0; --i) {
-			Destroy (canvas.transform.GetChild (i).gameObject);
+			Destroy (container.transform.GetChild (i).gameObject);
 		}
 	}
 
@@ -100,11 +103,11 @@ public class BasicInkExample : MonoBehaviour {
 	public Story story;
 
 	[SerializeField]
-	private Canvas canvas = null;
+	private GameObject container = null;
 
 	// UI Prefabs
 	[SerializeField]
-	private Text textPrefab = null;
+	private TextMeshProUGUI textPrefab = null;
 	[SerializeField]
 	private Button buttonPrefab = null;
 }
