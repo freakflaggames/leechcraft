@@ -28,6 +28,9 @@ public class BasicInkExample : MonoBehaviour {
 
 		// Remove all the UI on screen
 		//RemoveChildren ();
+
+		//Remove choices
+		RemoveChoices();
 		
 		// Read all the content until we can't continue any more
 		while (story.canContinue) {
@@ -96,6 +99,14 @@ public class BasicInkExample : MonoBehaviour {
 		for (int i = childCount - 1; i >= 0; --i) {
 			Destroy (container.transform.GetChild (i).gameObject);
 		}
+	}
+
+	void RemoveChoices() {
+		for (var i = container.transform.childCount - 1; i >= 0; i--)
+        {
+            if (container.transform.GetChild(i).gameObject.tag == "Choice")
+            Destroy(container.transform.GetChild(i).gameObject);
+        }
 	}
 
 	[SerializeField]

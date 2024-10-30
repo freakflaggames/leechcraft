@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8330415456905137800}
   - component: {fileID: 8521635474389066700}
   m_Layer: 5
-  m_Name: Dialogue Option
-  m_TagString: Untagged
+  m_Name: DialogueOption
+  m_TagString: Choice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
