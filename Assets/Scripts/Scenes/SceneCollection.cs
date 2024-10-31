@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SceneCollection : MonoBehaviour
 {
-    [SerializeField] public SceneDataSO[] SceneDataSOArray;
+    [SerializeField] public SceneDataSO[] Scenes;
     public Dictionary<string, int> SceneIDToIndexMap = new Dictionary<string, int>();
+    public Dictionary<SceneDataSO, SceneData> SceneDataCollection = new Dictionary<SceneDataSO, SceneData>();
     private void Awake()
     {
         GameManager.Instance.SceneCollection = this;
@@ -14,10 +15,18 @@ public class SceneCollection : MonoBehaviour
     }
     void PopulateSceneMappings()
     {
-        foreach (var sceneDataSO in SceneDataSOArray)
+        foreach (var sceneDataSO in Scenes)
         {
             SceneIDToIndexMap[sceneDataSO.Name] = sceneDataSO.SceneIndex;
         }
+        for (int i = 0; i < Scenes.Length; i++)
+        {
+            SceneDataCollection.Add(Scenes[i], new SceneData());
+        }
+    }
+    public SceneData GetCurrentSceneData()
+    {
+        return SceneDataCollection[GameManager.Instance.SceneData.Data];
     }
     public void Save(ref SceneSaveData data)
     {

@@ -32,6 +32,11 @@ public class SaveSystem
             GameManager.Instance.Player.Save(ref _saveData.PlayerData);
         }
 
+        if (GameManager.Instance.SceneData)
+        {
+            GameManager.Instance.SceneData.UpdateSceneCollection();
+        }
+
         GameManager.Instance.SceneCollection.Save(ref _saveData.SceneSaveData);
     }
 

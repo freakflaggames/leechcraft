@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67013191b82ed74592f863d63d88d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneDataSOArray:
+  Scenes:
   - {fileID: 11400000, guid: f1dab0b14a5eb0a46862a3dbf6980876, type: 2}
   - {fileID: 11400000, guid: 145abe54ae3429142af18db3733f05f2, type: 2}
   - {fileID: 11400000, guid: 60f6ba9a7f889c5498fdecd364fc7ce1, type: 2}

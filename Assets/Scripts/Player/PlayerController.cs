@@ -49,8 +49,11 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         //move player forward if move input is held down
-        var movePos = transform.forward * (input.MoveDirection.magnitude * MoveSpeed) * Time.deltaTime;
-        controller.Move(movePos);
+        if (input.MoveDirection.magnitude > 0)
+        {
+            var movePos = transform.forward * (input.MoveDirection.magnitude * MoveSpeed) * Time.deltaTime;
+            controller.Move(movePos);
+        }
     }
     void Interact()
     {
@@ -85,6 +88,13 @@ public class PlayerController : MonoBehaviour
     }
     public void Load(PlayerSaveData data)
     {
+        SceneData CurrentSceneData = GameManager.Instance.SceneCollection.GetCurrentSceneData();
+
+        if (CurrentSceneData.LastPlayerPosition != Vector3.zero)
+        {
+            transform.position = CurrentSceneData.LastPlayerPosition;
+        }
+
         PlayerInventory.ItemSlots = data.Items;
     }
 }

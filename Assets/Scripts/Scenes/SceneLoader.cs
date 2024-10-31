@@ -14,6 +14,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadSceneByIndex(string savedSceneID)
     {
+        SaveSystem.Save();
         if (GameManager.Instance.SceneCollection.SceneIDToIndexMap.TryGetValue(savedSceneID, out int sceneIndex))
         {
             SceneManager.LoadScene(sceneIndex);

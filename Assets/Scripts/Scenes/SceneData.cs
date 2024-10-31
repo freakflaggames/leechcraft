@@ -18,6 +18,7 @@ public class SceneData : MonoBehaviour
         else
         {
             GameManager.Instance.SceneData = this;
+            GetDataFromCollection();
         }
     }
     private void Start()
@@ -25,5 +26,25 @@ public class SceneData : MonoBehaviour
         //Load, then save data at start of level
         SaveSystem.Load();
         SaveSystem.Save();
+    }
+    void GetDataFromCollection()
+    {
+        if (GameManager.Instance.SceneCollection)
+        {
+            SceneData CurrentSceneData = GameManager.Instance.SceneCollection.GetCurrentSceneData();
+            LastPlayerPosition = CurrentSceneData.LastPlayerPosition;
+        }
+    }
+    public void UpdateSceneCollection()
+    {
+        if (GameManager.Instance.Player)
+        {
+            LastPlayerPosition = GameManager.Instance.Player.transform.position;
+        }
+
+        if (Data)
+        {
+            GameManager.Instance.SceneCollection.SceneDataCollection[Data] = this;
+        }
     }
 }
