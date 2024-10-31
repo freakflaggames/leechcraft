@@ -9,8 +9,19 @@ public class PlayerController : MonoBehaviour
 
     CharacterController controller;
     PlayerInput input;
-    private void Start()
+
+    public InteractionSystem Interaction;
+    public Inventory PlayerInventory;
+
+    public delegate void OnPlayerCollected();
+    public static event OnPlayerCollected playerCollected;
+
+    private void Awake()
     {
+        if (GameManager.Instance)
+        {
+            GameManager.Instance.Player = this;
+        }
         controller = GetComponent<CharacterController>();
         input = GetComponent<PlayerInput>();
     }
@@ -39,4 +50,45 @@ public class PlayerController : MonoBehaviour
         var movePos = transform.forward * (input.MoveDirection.magnitude * MoveSpeed) * Time.deltaTime;
         controller.Move(movePos);
     }
+    void Interact()
+    {
+        Interaction.Interact();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        var nearbyInteractable = other.gameObject.GetComponent<IInteractable>();
+        if (nearbyInteractable != null)
+        {
+            Interaction.Interactable = nearbyInteractable;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (Interaction.Interactable != null)
+        {
+            Interaction.ClearInteractable();
+        }
+    }
+    private void OnEnable()
+    {
+        PlayerInput.playerInteracted += Interact;
+    }
+    private void OnDisable()
+    {
+        PlayerInput.playerInteracted -= Interact;
+    }
+    public void Save(ref PlayerSaveData data)
+    {
+        data.Items = PlayerInventory.ItemSlots;
+    }
+    public void Load(PlayerSaveData data)
+    {
+        PlayerInventory.ItemSlots = data.Items;
+    }
+}
+
+[System.Serializable]
+public struct PlayerSaveData
+{
+    public List<InventorySlot> Items;
 }

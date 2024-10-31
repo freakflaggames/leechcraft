@@ -6,7 +6,7 @@ using TMPro;
 
 public class ItemDisplayUI : MonoBehaviour
 {
-    public ItemObject item;
-    public Image image;
-    public TextMeshProUGUI amountText;
+    public Item Item;
+    public Image Image;
+    public TextMeshProUGUI AmountText;
 }

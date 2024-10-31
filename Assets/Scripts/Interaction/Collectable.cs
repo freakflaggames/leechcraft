@@ -1,14 +1,19 @@
 using UnityEngine;
 public class Collectable : MonoBehaviour, IInteractable
 {
-    public ItemObject Item;
+    public Item Item;
     public int Amount;
-    public void Interact(PlayerInteraction interaction)
+    public void Interact(InteractionSystem interaction)
     {
-        interaction.ClearInteractable();
-        if (interaction.PlayerInventory.AddItem(Item, Amount))
+        Inventory inventory = interaction.gameObject.GetComponent<Inventory>();
+
+        if (inventory)
         {
-            Destroy(gameObject);
+            if (inventory.AddItem(Item, Amount))
+            {
+                Destroy(gameObject);
+                interaction.ClearInteractable();
+            }
         }
     }
 }

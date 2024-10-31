@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
-public class InventoryObject : ScriptableObject
+public class Inventory : MonoBehaviour
 {
     public int MaxSlots;
     public List<InventorySlot> ItemSlots = new List<InventorySlot>();
-    public bool AddItem(ItemObject _item, int _amount)
+    public bool AddItem(Item _item, int _amount)
     {
         //if you're adding an item that you already have, instead increase the amount of that item
         bool hasItem = false;
@@ -39,6 +38,9 @@ public class InventoryObject : ScriptableObject
                 ItemSlots.Add(new InventorySlot(_item, _amount));
             }
         }
+
+        //If you collected an item, save
+        SaveSystem.Save();
         return true;
     }
 }
@@ -46,9 +48,9 @@ public class InventoryObject : ScriptableObject
 [System.Serializable]
 public class InventorySlot
 {
-    public ItemObject item;
+    public Item item;
     public int amount;
-    public InventorySlot(ItemObject _item, int _amount)
+    public InventorySlot(Item _item, int _amount)
     {
         item = _item;
         amount = _amount;
