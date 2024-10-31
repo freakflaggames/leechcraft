@@ -32,7 +32,7 @@ public class SaveSystem
             GameManager.Instance.Player.Save(ref _saveData.PlayerData);
         }
 
-        GameManager.Instance.SceneLoader.Save(ref _saveData.SceneSaveData);
+        GameManager.Instance.SceneCollection.Save(ref _saveData.SceneSaveData);
     }
 
     public static void Load()
@@ -50,9 +50,9 @@ public class SaveSystem
             GameManager.Instance.Player.Load(_saveData.PlayerData);
         }
 
-        if (GameManager.Instance.SceneData)
+        if (GameManager.Instance.SceneCollection)
         {
-            GameManager.Instance.SceneLoader.Load(_saveData.SceneSaveData);
+            GameManager.Instance.SceneCollection.Load(_saveData.SceneSaveData);
         }
     }
 }

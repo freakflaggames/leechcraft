@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public delegate void OnPlayerCollected();
     public static event OnPlayerCollected playerCollected;
 
+    bool loaded;
+
     private void Awake()
     {
         if (GameManager.Instance)

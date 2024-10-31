@@ -13,6 +13,8 @@ public class Collectable : MonoBehaviour, IInteractable
             {
                 Destroy(gameObject);
                 interaction.ClearInteractable();
+                //If collected an object, save
+                SaveSystem.Save();
             }
         }
     }

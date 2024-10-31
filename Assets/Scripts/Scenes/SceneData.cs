@@ -22,7 +22,8 @@ public class SceneData : MonoBehaviour
     }
     private void Start()
     {
-        //Save data at start of level
+        //Load, then save data at start of level
         SaveSystem.Load();
+        SaveSystem.Save();
     }
 }

@@ -38,9 +38,6 @@ public class Inventory : MonoBehaviour
                 ItemSlots.Add(new InventorySlot(_item, _amount));
             }
         }
-
-        //If you collected an item, save
-        SaveSystem.Save();
         return true;
     }
 }
