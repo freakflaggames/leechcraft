@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
     public GameObject itemDisplayPrefab;
-    public InventoryObject inventory;
+    public Inventory inventory;
     public List<ItemDisplayUI> ItemDisplays;
     private void Awake()
     {
@@ -27,18 +27,18 @@ public class InventoryUI : MonoBehaviour
             {
                 InventorySlot slot = inventory.ItemSlots[i];
 
-                display.image.enabled = true;
-                display.image.sprite = slot.item.Icon;
+                display.Image.enabled = true;
+                display.Image.sprite = slot.item.Icon;
                 if (slot.amount > 1)
                 {
-                    display.amountText.enabled = true;
-                    display.amountText.text = slot.amount + "";
+                    display.AmountText.enabled = true;
+                    display.AmountText.text = slot.amount + "";
                 }
             }
             else
             {
-                display.image.enabled = false;
-                display.amountText.enabled = false;
+                display.Image.enabled = false;
+                display.AmountText.enabled = false;
             }
         }
     }
