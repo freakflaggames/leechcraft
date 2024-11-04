@@ -30,16 +30,16 @@ public class SceneCollection : MonoBehaviour
     }
     public void Save(ref SceneSaveData data)
     {
-        if (GameManager.Instance.SceneData.Data)
+        if (GameManager.Instance.SceneData)
         {
             data.LastSceneID = GameManager.Instance.SceneData.Data.Name;
         }
     }
     public void Load(SceneSaveData data)
     {
-        if (!GameManager.Instance.SceneData.Data)
+        if (!GameManager.Instance.SceneData)
         {
-            if (data.LastSceneID == null)
+            if (data.LastSceneID == "")
             {
                 data.LastSceneID = "Leech House";
             }
