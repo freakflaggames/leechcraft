@@ -18,7 +18,11 @@ public class SceneData : MonoBehaviour
         else
         {
             GameManager.Instance.SceneData = this;
-            GetDataFromCollection();
+
+            if (Data)
+            { 
+                GetDataFromCollection(); 
+            }
         }
     }
     private void Start()

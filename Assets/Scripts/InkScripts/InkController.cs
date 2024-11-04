@@ -5,17 +5,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
-public class BasicInkExample : MonoBehaviour {
+public class InkController : MonoBehaviour {
     public static event Action<Story> OnCreateStory;
 	
     void Awake () {
 		// Remove the default message
 		RemoveChildren();
-		StartStory();
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
-	void StartStory () {
+	public void StartStory () {
 		story = new Story (inkJSONAsset.text);
         if(OnCreateStory != null) OnCreateStory(story);
 		RefreshView();
@@ -55,10 +54,7 @@ public class BasicInkExample : MonoBehaviour {
 		}
 		// If we've read all the content and there's no choices, the story is finished!
 		else {
-			Button choice = CreateChoiceView("End of story.\nRestart?");
-			choice.onClick.AddListener(delegate{
-				StartStory();
-			});
+			gameObject.SetActive(false);
 		}
 
 	}
@@ -94,7 +90,7 @@ public class BasicInkExample : MonoBehaviour {
 	}
 
 	// Destroys all the children of this gameobject (all the UI)
-	void RemoveChildren () {
+	public void RemoveChildren () {
 		int childCount = container.transform.childCount;
 		for (int i = childCount - 1; i >= 0; --i) {
 			Destroy (container.transform.GetChild (i).gameObject);
@@ -110,7 +106,7 @@ public class BasicInkExample : MonoBehaviour {
 	}
 
 	[SerializeField]
-	private TextAsset inkJSONAsset = null;
+	public TextAsset inkJSONAsset = null;
 	public Story story;
 
 	[SerializeField]

@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     public SceneCollection SceneCollection;
     public SceneData SceneData;
     public SceneLoader SceneLoader;
-    public static GameManager Instance;
     public PlayerController Player;
-    public Vector3 LastPlayerPosition;
+    public InkController InkController;
     private void Awake()
     {
         Instance = this;
@@ -20,5 +20,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SaveSystem.Load();
+    }
+    public void StartDialogue(TextAsset inkAsset)
+    {
+        InkController.gameObject.SetActive(true);
+        InkController.inkJSONAsset = inkAsset;
+        InkController.RemoveChildren();
+        InkController.StartStory();
     }
 }
