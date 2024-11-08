@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.327
+    m_Value: 0.463
   smoothness:
     m_OverrideState: 0
     m_Value: 0.2
@@ -52,7 +52,7 @@ MonoBehaviour:
     m_Value: 0.37
   scatter:
     m_OverrideState: 1
-    m_Value: 0.321
+    m_Value: 0.243
   clamp:
     m_OverrideState: 0
     m_Value: 65472
@@ -110,7 +110,7 @@ MonoBehaviour:
     m_Value: 4
   intensity:
     m_OverrideState: 1
-    m_Value: 0.076
+    m_Value: 0.087
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -278,8 +278,8 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0.072916664
-          value: 0.94736844
+          time: 0.04411765
+          value: 0.784
           inSlope: -2.5043478
           outSlope: -2.5043478
           tangentMode: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.22222222
+          time: 0.09558824
           value: 0
           inSlope: -1.8295609
           outSlope: -1.8295609
@@ -296,7 +296,7 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.9131944
+          time: 0.9485294
           value: 0
           inSlope: 1.6642725
           outSlope: 1.6642725
