@@ -7,7 +7,7 @@ public class DummyInteractable : MonoBehaviour, IInteractable
 {
     public UnityEvent OnInteracted;
 
-    public void Interact(PlayerInteraction interaction)
+    public void Interact(InteractionSystem interaction)
     {
         OnInteracted.Invoke();
     }
