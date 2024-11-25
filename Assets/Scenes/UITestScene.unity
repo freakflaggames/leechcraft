@@ -3268,6 +3268,12 @@ PrefabInstance:
       propertyPath: inkJSONAsset
       value: 
       objectReference: {fileID: 4900000, guid: 3d3a25fa2079544d2b3e8dbc839ab27b, type: 3}
+    - target: {fileID: 4617343907663437632, guid: f4fe2f692e82e4818bae352fb83420aa,
+        type: 3}
+      propertyPath: dividerPrefab
+      value: 
+      objectReference: {fileID: 2653553185246847588, guid: 4be642b4ac23245daaf8098e6a2cf4b7,
+        type: 3}
     - target: {fileID: 7293199669114809685, guid: f4fe2f692e82e4818bae352fb83420aa,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -3287,6 +3293,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197899010886416321, guid: f4fe2f692e82e4818bae352fb83420aa,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

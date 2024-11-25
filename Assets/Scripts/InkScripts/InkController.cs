@@ -28,8 +28,14 @@ public class InkController : MonoBehaviour {
 		// Remove all the UI on screen
 		//RemoveChildren ();
 
+		//Grey out existing text
+		GreyText();
+		
 		//Remove choices
 		RemoveChoices();
+
+		Image divider = Instantiate(dividerPrefab) as Image;
+		divider.transform.SetParent (container.transform, false);
 		
 		// Read all the content until we can't continue any more
 		while (story.canContinue) {
@@ -105,6 +111,18 @@ public class InkController : MonoBehaviour {
         }
 	}
 
+	void GreyText() {
+		for (var i = container.transform.childCount - 1; i >= 0; i--)
+        {
+			if (container.transform.GetChild(i).gameObject.tag == "Text")
+			{
+				GameObject choice = container.transform.GetChild(i).gameObject;
+				TextMeshProUGUI text = choice.GetComponent<TextMeshProUGUI> ();
+				text.color = new Color (0.25f,0.25f,0.25f, 1.0f);
+			}
+        }
+	}
+
 	[SerializeField]
 	public TextAsset inkJSONAsset = null;
 	public Story story;
@@ -117,4 +135,6 @@ public class InkController : MonoBehaviour {
 	private TextMeshProUGUI textPrefab = null;
 	[SerializeField]
 	private Button buttonPrefab = null;
+	[SerializeField]
+	private  Image dividerPrefab = null;
 }

@@ -254,6 +254,7 @@ MonoBehaviour:
     type: 3}
   buttonPrefab: {fileID: 8330415456905137800, guid: ed4a62e7cb8a24e90aa3ab2b2c1f4c52,
     type: 3}
+  dividerPrefab: {fileID: 0}
 --- !u!1 &4134106676056701808
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
