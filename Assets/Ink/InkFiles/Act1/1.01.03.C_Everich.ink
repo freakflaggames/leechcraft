@@ -1,4 +1,4 @@
-//Unlocked at start of game. Triggered by interacting with Everich
+//Unlocked at start of game. Triggered by interacting with Everich. Repeatable (see: conversation can be triggered again, but previously chosen options are unavailable)
 
 You turn to Everich.
 
@@ -58,4 +58,4 @@ The man is baffled and looking to you for reassurance.
     
     <b>EVERICH:</b> Spotted 'em last night. Seemed to be causing her pain...->everichQuestions
 
-* Leave him. -> END
+*[Leave him.]-> END

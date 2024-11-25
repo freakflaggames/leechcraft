@@ -1,22 +1,23 @@
 //Unlocked by collecting at least one remedy, examining Adda, and talking to Everich. Triggered by interacting with Adda again.
 
-(BB)Tincture
-(P)Leeches
-(S)Lance
-(YB)Panacea
-
-
-
-
-
-
-
-
-
-
 It's clear to see that she's suffering from a form of dyscrasia — an imbalance of the humors — but that appears to be a symptom of something greater. 
 She has an excess of blood, proven by her fever, bruising, and those terrible red growths.
-The pustules scare you the most. Perhaps it would be best to lance them, but the girl is already in pain and it might be best to let her body fight on its own. The common response for excessive blood is bloodletting, but this may be an uncommon situation.
+The pustules scare you the most. {!charlatan:Perhaps it would be best to lance them, but the girl is already in pain and it might be best to let her body fight on its own. The common response for excessive blood is bloodletting, but this may be an uncommon situation.}{charlatan:This is unlike anything you're "healed" before, and you're not sure how many more times you can say it was "the Lady's will" that your patient died. But each remedy you administer is a gamble, and you're feeling lucky.}
+
+*[Brew a tincture.]
+*[Use leeches.]
+*[Lance the pustules.]
+*[Create a panacea.]
+
+
+
+
+
+
+
+
+
+
 * [Lance the pustules.] ->lance
 * [Let her blood.] ->let
 * [Soothe her pain.] ->soothe

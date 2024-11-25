@@ -8,7 +8,7 @@ You turn your attention back to the girl, Adda. She lies on the table, shivering
 
     You catch sight of a dark red bruise. Then another. 
     
-    Something about them feels off. 
+    Something about them feels off. Her father might know more.
     
     -> examine
             
@@ -19,5 +19,4 @@ You turn your attention back to the girl, Adda. She lies on the table, shivering
     You spot another, slightly larger. Fascinating. 
     
     -> examine
-    
-*{arms or neck}[Conclude your examination.] -> END
+*{arms && neck}[Conclude your examination.] -> END
