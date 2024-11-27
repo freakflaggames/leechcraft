@@ -13,8 +13,8 @@ VAR addalives = false
 === function lower(ref x)
  	~ x = x - 1
 
- === function raise(ref x)
- 	~ x = x + 1
+=== function raise(ref x)
+	~ x = x + 1
 
 // DIALOGUE:
 
