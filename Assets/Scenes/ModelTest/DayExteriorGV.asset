@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: LeechcraftGlobalVolume
+  m_Name: DayExteriorGV
   m_EditorClassIdentifier: 
   components:
   - {fileID: -9108628517063928869}
@@ -368,7 +368,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   colorFilter:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 1, g: 0.8726415, b: 0.8726415, a: 1}
   hueShift:
     m_OverrideState: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 65472
   tint:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 1, g: 0.504717, b: 0.504717, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
