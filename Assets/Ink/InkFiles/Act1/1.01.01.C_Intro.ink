@@ -1,4 +1,5 @@
 // Triggered at the beginning of the game
+=== 10101C_Intro ===
 
 You awaken to a pounding on your door.
 

@@ -1,4 +1,5 @@
 //Unlocked at start of game. Triggered by interacting with Everich. Repeatable (see: conversation can be triggered again, but previously chosen options are unavailable)
+=== 10103C_Everich ===
 
 You turn to Everich.
 
@@ -46,7 +47,7 @@ The man is baffled and looking to you for reassurance.
     
     <b>EVERICH:</b> 'Bout two days ago she got a fever. Complained about 'er head. -> everichQuestions
 
-*{arms}<b>LEECH:</b> How did she get the marks on her arm?
+*{10102I_arms}<b>LEECH:</b> How did she get the marks on her arm?
 
     The man seems surprised, then worried. He hadn't noticed them. 
             
@@ -54,7 +55,7 @@ The man is baffled and looking to you for reassurance.
             
     Unhelpful. But worth filing away for later. -> everichQuestions
     
-*{neck}<b>LEECH:</b> How long has she had these growths?
+*{10102I_neck}<b>LEECH:</b> How long has she had these growths?
     
     <b>EVERICH:</b> Spotted 'em last night. Seemed to be causing her pain...->everichQuestions
 
