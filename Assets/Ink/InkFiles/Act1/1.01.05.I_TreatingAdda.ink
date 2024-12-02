@@ -10,9 +10,11 @@ The pustules scare you the most. {!charlatan:Perhaps it would be best to lance t
 *{remedyBloodletting}<b>REMEDY:</b> Bloodletting -> bloodletting
 *{remedyUnicornPanacea}<b>REMEDY:</b> Unicorn Horn Panacea -> panacea
 
-= tincture
 
-~ raise (panic)
+
+
+= tincture
+~ raise(blackBile)
 Your supplies are running low. You make a salve using the last of your mandragora. You apply it to the pustules and get to work brewing a tea that should help with the fever.
 It's not much, but you are hesitant to let her blood at this stage, whether by leech or blade. 
 You send the girl's father home with instructions to return at sunrise. With your medicinals administered, all anyone can do is wait. 
@@ -27,15 +29,19 @@ You send the girl's father home with instructions to return at sunrise. With you
     
 -> END
 
-= leeches
 
-//~ raise (trust)
-/~ addaleech = true
+
+
+
+
+
+
+= leeches
+~ raise(phlegm)
+
 The ceramic lid of the jar is cold when you lift it. The wriggling shapes inside stir when you disturb them. You pick out three, that should be sufficient. 
-Leeches. Magical little creatures, to the uneducated. To you, they are medical instruments — perhaps even collaborators in your work. Bloodletting is already a great tool of the healer, but leeches provide additional benefits. Their saliva has anesthetic and anticoagulant properties and they avoid the messiness of letting blood with a blade.
-The leeches latch onto the girl's arms easily, now to wait for them to work their magic.
-* [Wait.]
-//    ~ addalives = true
+The leeches latch onto the girl's arms easily. Now you simply must wait for them to work their magic.
+* {physician}[Wait.]
     In the meantime, you can help in your own way. You make a salve using the last of your mandragora and apply it to the pustules. Your supplies are running low, something to be solved later.
     The leeches detach when their bellies are full and you place them back in the jar as dawn arrives. Adda rests peacefully, as does Everich in a chair next to her. 
         **LEECH: Everich, will you keep an eye on her? I need to gather more supplies. She should remain stable.
@@ -49,14 +55,26 @@ The leeches latch onto the girl's arms easily, now to wait for them to work thei
         **[Prepare to leave without disturbing their rest.]
                 You quietly leave your home. Adda should be fine while you're out and if not, Everich will come find you.
             *** [Leave your home.]
-            -> END
+
+-> END
+* {!physician}[Wait.]
+    
+
 -> END
 
- = bloodletting
 
+
+
+
+
+
+
+
+
+ = bloodletting
+~ raise(blood)
  
 //~ addablood = true
-~ raise (panic)
 Rooting out the problem at the apparent source is the most direct route to a solution. 
 You turn to the girl's father.
 * LEECH: Hold her still. I'm going to drain those growths.
@@ -100,6 +118,16 @@ You turn to the girl's father.
             *** [Leave your home.]
 - -> END
 
-= panacea
 
+
+
+
+
+
+
+
+= panacea
+~raise(yellowBile)
+
+adda dies.
     -> END

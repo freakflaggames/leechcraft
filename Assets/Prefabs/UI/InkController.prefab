@@ -254,7 +254,8 @@ MonoBehaviour:
     type: 3}
   buttonPrefab: {fileID: 8330415456905137800, guid: ed4a62e7cb8a24e90aa3ab2b2c1f4c52,
     type: 3}
-  dividerPrefab: {fileID: 0}
+  dividerPrefab: {fileID: 2653553185246847588, guid: 4be642b4ac23245daaf8098e6a2cf4b7,
+    type: 3}
 --- !u!1 &4134106676056701808
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,8 +324,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 35b6f6b89a63e4dc59d5ab4fea870e2d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
