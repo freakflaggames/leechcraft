@@ -23,6 +23,9 @@ VAR panic = 0
 // CHARACTER TRUST
 VAR trustEverich = 0
 
+// CHARACTR DEATHS
+VAR addaDead = false
+
 // REMEDIES
 VAR remedyAddaTincture = false
 VAR remedyLeeches = false
@@ -32,6 +35,11 @@ VAR remedyUnicornPanacea = false
 // STORY STATE
 VAR 10102I_arms = false
 VAR 10102I_neck = false
+VAR 10105I_smellAddaBlood = false
+
+// "INVENTORY"
+ VAR 10105I_infectedBlood = false
+
 
 // RAISE & LOWER
 === function lower(ref x)
