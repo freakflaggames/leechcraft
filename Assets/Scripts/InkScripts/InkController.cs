@@ -16,6 +16,7 @@ public class InkController : MonoBehaviour {
 	// Creates a new Story object with the compiled story which we can then play!
 	public void StartStory () {
 		story = new Story (inkJSONAsset.text);
+		story.ChoosePathString(knot);
         if(OnCreateStory != null) OnCreateStory(story);
 		RefreshView();
 	}
@@ -126,6 +127,7 @@ public class InkController : MonoBehaviour {
 	[SerializeField]
 	public TextAsset inkJSONAsset = null;
 	public Story story;
+	public string knot;
 
 	[SerializeField]
 	private GameObject container = null;

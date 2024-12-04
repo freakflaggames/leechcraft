@@ -40,7 +40,6 @@ VAR 10105I_smellAddaBlood = false
 // "INVENTORY"
  VAR 10105I_infectedBlood = false
 
-
 // RAISE & LOWER
 === function lower(ref x)
  	~ x = x - 1

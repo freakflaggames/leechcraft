@@ -22,10 +22,10 @@ public class GameManager : MonoBehaviour
         SaveSystem.Save();
         SaveSystem.Load();
     }
-    public void StartDialogue(TextAsset inkAsset)
+    public void StartDialogue(string knotName)
     {
         InkController.gameObject.SetActive(true);
-        InkController.inkJSONAsset = inkAsset;
+        InkController.knot = knotName;
         InkController.RemoveChildren();
         InkController.StartStory();
     }

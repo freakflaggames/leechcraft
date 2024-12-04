@@ -114,10 +114,12 @@ You use the last of your bandage to dress her neck, not that it will save her no
 
 = panacea
 ~raise(yellowBile)
+{charlatan:->panaceaCharlatan}{!charlatan:panaceaFailure}
+-(panaceaCharlatan)
+You gather the ingredients - unicorn horn powder, mercury, sage, and wine - and mix them with flourish.
 
+-(panaceaFailure)
 You gather the ingredients - unicorn horn powder for this mysterious illness, mercury for the bruises, sage for the pain, and wine for flavor. 
-
-
 
     -> END
     

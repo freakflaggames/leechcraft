@@ -248,7 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e957d58a4584a8894329531ec0b096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSONAsset: {fileID: 4900000, guid: 2b50adf9884b0459e9ff28426870af1d, type: 3}
+  inkJSONAsset: {fileID: 4900000, guid: 3424468af014140898691109bdd4a86c, type: 3}
+  knot: 
   container: {fileID: 3599759083460142675}
   textPrefab: {fileID: 3327169143475422752, guid: 1e0ac85e863e844bf9f05d1db4736340,
     type: 3}
@@ -317,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.05490196, g: 0.050980393, b: 0.043137256, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DialogueInteractable : MonoBehaviour, IInteractable
 {
-    public TextAsset Dialogue;
+    public string Knot;
 
     public void Interact(InteractionSystem interaction)
     {
-        GameManager.Instance.StartDialogue(Dialogue);
+        GameManager.Instance.StartDialogue(Knot);
     }
 }
