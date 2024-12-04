@@ -100,10 +100,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.5165405
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.016540527}
 --- !u!143 &2515145656914196529
 CharacterController:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e27000b91c60e3e4986dbfe8bba62e29, type: 2}
+      objectReference: {fileID: 2100000, guid: acf29cf590f516a44ad13ce4030e0a91, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
