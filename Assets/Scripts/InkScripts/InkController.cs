@@ -11,11 +11,13 @@ public class InkController : MonoBehaviour {
     void Awake () {
 		// Remove the default message
 		RemoveChildren();
+
+		story = new Story(inkJSONAsset.text);
+		SaveSystem.LoadDialogue();
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
 	public void StartStory () {
-		story = new Story (inkJSONAsset.text);
 		SaveSystem.LoadDialogue();
 		story.ChoosePathString(knot);
         if(OnCreateStory != null) OnCreateStory(story);
