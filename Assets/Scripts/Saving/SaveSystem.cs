@@ -13,6 +13,7 @@ public class SaveSystem
     {
         public PlayerSaveData PlayerData;
         public SceneSaveData SceneSaveData;
+        public InkSaveData InkSaveData;
     }
     public static string SaveFileName()
     {
@@ -22,6 +23,16 @@ public class SaveSystem
     public static void Save()
     {
         HandleSaveData();
+        File.WriteAllText(SaveFileName(), JsonUtility.ToJson(_saveData, true));
+    }
+
+    public static void SaveDialogue()
+    {
+        if (GameManager.Instance.InkController)
+        {
+            GameManager.Instance.InkController.Save(ref _saveData.InkSaveData);
+        }
+
         File.WriteAllText(SaveFileName(), JsonUtility.ToJson(_saveData, true));
     }
 
@@ -46,6 +57,17 @@ public class SaveSystem
 
         _saveData = JsonUtility.FromJson<SaveData>(saveContent);
         HandleLoadData();
+    }
+    public static void LoadDialogue()
+    {
+        string saveContent = File.ReadAllText(SaveFileName());
+
+        _saveData = JsonUtility.FromJson<SaveData>(saveContent);
+
+        if (GameManager.Instance.InkController)
+        {
+            GameManager.Instance.InkController.Load(_saveData.InkSaveData);
+        }
     }
 
     public static void HandleLoadData()

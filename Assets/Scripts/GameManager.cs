@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        SaveSystem.Save();
         SaveSystem.Load();
     }
     public void StartDialogue(string knotName)

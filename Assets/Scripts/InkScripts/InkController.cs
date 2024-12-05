@@ -16,6 +16,7 @@ public class InkController : MonoBehaviour {
 	// Creates a new Story object with the compiled story which we can then play!
 	public void StartStory () {
 		story = new Story (inkJSONAsset.text);
+		SaveSystem.LoadDialogue();
 		story.ChoosePathString(knot);
         if(OnCreateStory != null) OnCreateStory(story);
 		RefreshView();
@@ -69,6 +70,7 @@ public class InkController : MonoBehaviour {
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton (Choice choice) {
 		story.ChooseChoiceIndex (choice.index);
+		SaveSystem.SaveDialogue();
 		RefreshView();
 	}
 
@@ -124,10 +126,28 @@ public class InkController : MonoBehaviour {
         }
 	}
 
+	public void Save(ref InkSaveData data)
+	{
+		if (story)
+        {
+			data.state = story.state.ToJson();
+			print("saved " + data.state);
+		}
+	}
+	public void Load(InkSaveData data)
+	{
+		if (data.state != "")
+        {
+			story.state.LoadJson(data.state);
+			print("loaded " + data.state);
+        }
+	}
+
 	[SerializeField]
 	public TextAsset inkJSONAsset = null;
 	public Story story;
 	public string knot;
+	public string saveState;
 
 	[SerializeField]
 	private GameObject container = null;
@@ -139,4 +159,10 @@ public class InkController : MonoBehaviour {
 	private Button buttonPrefab = null;
 	[SerializeField]
 	private  Image dividerPrefab = null;
+}
+
+[System.Serializable]
+public struct InkSaveData
+{
+	public string state;
 }
