@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class DialogueInteractable : MonoBehaviour, IInteractable
 {
+    public bool Repeatable;
+    public bool Interacted;
     public string Knot;
 
     public void Interact(InteractionSystem interaction)
     {
-        GameManager.Instance.StartDialogue(Knot);
+        if (!Interacted && !Repeatable || Repeatable)
+        {
+            GameManager.Instance.StartDialogue(Knot);
+            Interacted = true;
+        }
     }
 }
