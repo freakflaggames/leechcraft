@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         //move player forward if move input is held down
         if (input.MoveDirection.magnitude > 0)
         {
-            var movePos = transform.forward * (input.MoveDirection.magnitude * MoveSpeed) * Time.deltaTime;
+            Vector3 movePos = (transform.forward * (input.MoveDirection.magnitude * MoveSpeed) * Time.deltaTime) + (Vector3.up * Physics.gravity.y * Time.deltaTime);
             controller.Move(movePos);
         }
     }
