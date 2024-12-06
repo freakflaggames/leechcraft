@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
 
     bool loaded;
 
+    //Hannah: added these variables for step audio 
+    private float stepCoolDown, stepRateSet;
+    [SerializeField] AudioSource audioFoot;
+    [SerializeField] float stepRate;
+
     private void Awake()
     {
         if (GameManager.Instance)
@@ -53,7 +58,23 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 movePos = (transform.forward * (input.MoveDirection.magnitude * MoveSpeed) * Time.deltaTime) + (Vector3.up * Physics.gravity.y * Time.deltaTime);
             controller.Move(movePos);
+
+            //Hannah: don't mind me just adding step audio stuff yay
+            stepRateSet = stepRate;
+
+            stepCoolDown -= Time.fixedDeltaTime;
+
+            if (controller.velocity.magnitude > 0 && stepCoolDown < 0f)
+            {
+                audioFoot.pitch = 1f + Random.Range(-0.3f, 0.1f);
+                audioFoot.Play();
+                stepCoolDown = stepRateSet;
+            }
+
+            //Hannah: end of step audio stuff
         }
+        else
+            audioFoot.Stop();
     }
     void Interact()
     {
