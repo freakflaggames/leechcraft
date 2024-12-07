@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterCreation : MonoBehaviour
 {
@@ -82,7 +83,8 @@ public class CharacterCreation : MonoBehaviour
         }
         else if (page == 1)
         {
-            humorSelect.SetActive(false);
+            SceneManager.LoadScene("Preload");
+            //humorSelect.SetActive(false);
             //confirmationscreen active
         }
     }
@@ -91,6 +93,7 @@ public class CharacterCreation : MonoBehaviour
     {
         if (page == 0)
         {
+            SceneManager.LoadScene("MainMenu");
             //to title screen
         }
         else if (page == 1)

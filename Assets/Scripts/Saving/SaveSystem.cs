@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class SaveSystem
 {
-    private static SaveData _saveData = new SaveData();
+    public static SaveData _saveData = new SaveData();
 
     [System.Serializable]
     public struct SaveData
@@ -19,6 +19,11 @@ public class SaveSystem
     {
         string saveFile = Application.persistentDataPath + "/save" + ".save";
         return saveFile;
+    }
+    public static void Erase()
+    {
+        _saveData.InkSaveData.state = "";
+        File.WriteAllText(SaveFileName(), JsonUtility.ToJson(_saveData, true));
     }
     public static void Save()
     {

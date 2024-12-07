@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        SceneManager.LoadScene("LeechHouse_1");
         SaveSystem.Load();
     }
     public void StartDialogue(string knotName)

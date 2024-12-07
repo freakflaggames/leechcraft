@@ -43,7 +43,7 @@ public class SceneCollection : MonoBehaviour
             {
                 data.LastSceneID = "Leech House";
             }
-            GameManager.Instance.SceneLoader.LoadSceneByIndex(data.LastSceneID);
+            //GameManager.Instance.SceneLoader.LoadSceneByIndex(data.LastSceneID);
         }
     }
 }
