@@ -32,11 +32,14 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         input = GetComponent<PlayerInput>();
     }
-    private void Update()
+
+    //Hannah: changed to fixed update so the step rate for the sounds would be consistent 
+    private void FixedUpdate()
     {
-        Look();
         Move();
+        Look();
     }
+
     void Look()
     {
         if (input.MoveDirection != Vector3.zero)
