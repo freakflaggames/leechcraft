@@ -16,7 +16,7 @@ public class CharacterCreation : MonoBehaviour
     public void Start()
     {
         backgroundSelect.SetActive(true);
-        humorSelect.SetActive(false);
+        //humorSelect.SetActive(false);
     }
 
     public void BackgroundSet(string backgroundSelected)
