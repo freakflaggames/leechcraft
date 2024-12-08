@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     CharacterController controller;
     PlayerInput input;
+
+    public LayerMask GroundMask;
 
     public InteractionSystem Interaction;
     public Inventory PlayerInventory;
@@ -32,12 +35,24 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         input = GetComponent<PlayerInput>();
     }
+    private void Update()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, GroundMask))
+        {
+            if (Input.GetMouseButton(0))
+            {
+                GetComponent<NavMeshAgent>().SetDestination(hitInfo.point);
+            }
+        }
+    }
 
     //Hannah: changed to fixed update so the step rate for the sounds would be consistent 
     private void FixedUpdate()
     {
-        Move();
-        Look();
+        //Move();
+        //Look();
     }
 
     void Look()

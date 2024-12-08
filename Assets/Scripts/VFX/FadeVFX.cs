@@ -11,7 +11,9 @@ public class FadeVFX : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         Instance = this;
+        Fade(0, 0, 1);
     }
 
     public void Fade(float fadeInTime, float holdTime, float fadeOutTime)
@@ -27,7 +29,7 @@ public class FadeVFX : MonoBehaviour
 
         yield return new WaitForSeconds(holdTime);
 
-        FadeImage.DOColor(new Color(0,0,0,0), fadeInTime);
+        FadeImage.DOColor(new Color(0,0,0,0), fadeOutTime);
 
         yield return new WaitForSeconds(fadeOutTime);
     }

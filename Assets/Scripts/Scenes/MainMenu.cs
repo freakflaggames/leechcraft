@@ -17,10 +17,17 @@ public class MainMenu : MonoBehaviour
     public void NewGame()
     {
         SaveSystem.Erase();
-        SceneManager.LoadScene("CharacterCreation");
+        FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
+        StartCoroutine(WaitToLoadScene(0.5f, "CharacterCreation"));
     }
     public void Continue()
     {
-        SceneManager.LoadScene("Preload");
+        FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
+        StartCoroutine(WaitToLoadScene(0.5f, "Preload"));
+    }
+    public static IEnumerator WaitToLoadScene(float time, string sceneName)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(sceneName);
     }
 }

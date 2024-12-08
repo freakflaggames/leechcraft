@@ -83,7 +83,8 @@ public class CharacterCreation : MonoBehaviour
         }
         else if (page == 1)
         {
-            SceneManager.LoadScene("Preload");
+            StartCoroutine(MainMenu.WaitToLoadScene(0.5f, "Preload"));
+            FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
             //humorSelect.SetActive(false);
             //confirmationscreen active
         }
@@ -93,7 +94,8 @@ public class CharacterCreation : MonoBehaviour
     {
         if (page == 0)
         {
-            SceneManager.LoadScene("MainMenu");
+            StartCoroutine(MainMenu.WaitToLoadScene(0.5f, "MainMenu"));
+            FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
             //to title screen
         }
         else if (page == 1)
