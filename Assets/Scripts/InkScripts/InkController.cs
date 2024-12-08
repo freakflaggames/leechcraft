@@ -16,6 +16,11 @@ public class InkController : MonoBehaviour {
 		SaveSystem.LoadDialogue();
 	}
 
+	void Start()
+	{
+		gameObject.SetActive(false);
+	}
+
 	// Creates a new Story object with the compiled story which we can then play!
 	public void StartStory () {
 		SaveSystem.LoadDialogue();

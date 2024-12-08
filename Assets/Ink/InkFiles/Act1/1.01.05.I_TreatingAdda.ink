@@ -1,9 +1,11 @@
 //Unlocked by collecting at least one remedy, examining Adda, and talking to Everich. Triggered by interacting with Adda again.
 
 === 10105I_TreatingAdda ===
+{totalRemedies > 0 && 10102I_AddaExam && 10103C_questions:->treatingAdda|->END}
+- (treatingAdda)
 It's clear to see that she's suffering from a form of dyscrasia — an imbalance of the humors — but that appears to be a symptom of something greater. 
 She has an excess of blood, proven by her fever, bruising, and those terrible red growths.
-The pustules scare you the most. {!charlatan:Perhaps it would be best to lance them, but the girl is already in pain and it might be best to let her body fight on its own. The common response for excessive blood is bloodletting, but this may be an uncommon situation.}{charlatan:This is unlike anything you've "healed" before, and you're not sure how many more times you can say it was "the Lady's will" that your patient died. But each remedy you administer is a gamble, and you're feeling lucky.}
+The pustules scare you the most. {!charlatan:Perhaps it would be best to lance them, but the girl is already in pain and it might be best to let her body fight on its own. The common response for excessive blood is bloodletting, but this may be an uncommon situation.|This is unlike anything you've "healed" before, and you're not sure how many more times you can say it was "the Lady's will" that your patient died. But each remedy you administer is a gamble, and you're feeling lucky.}
 
 *{remedyAddaTincture}<b>REMEDY:</b> Tincture for Fever, Pain, & Pustules -> tincture
 *{remedyLeeches}<b>REMEDY:</b> Leeches -> leeches
@@ -89,9 +91,9 @@ You turn to the girl's father.
 *<b>LEECH:</b> Set it on the table there, I'll deal with it later.
     ~ 10105I_infectedBlood = true
     <b>EVERICH:</b> As you say.
-    He places it among your tools and clutter, then returns to his daughter's side.{barber:->bloodlettingBarber}{!barber:bloodettingFailure}
+    He places it among your tools and clutter, then returns to his daughter's side.{barber:->bloodlettingBarber}{!barber:->bloodlettingFailure}
 *<b>LEECH:<b> Dump it outside. I have no need of it. 
-    You hear the door open, the splat of blood on dead leaves, then Everich returns.{barber:->bloodlettingBarber}{!barber:bloodettingFailure}
+    You hear the door open, the splat of blood on dead leaves, then Everich returns.{barber:->bloodlettingBarber}{!barber:->bloodlettingFailure}
 
 -(bloodlettingBarber)
 There seems to be no end to the tainted blood. As the second bowl fills, you know that you have reached the limit of what you can safely drain from the girl. 
@@ -115,7 +117,7 @@ You use the last of your bandage to dress her neck, not that it will save her no
 
 = panacea
 ~raise(yellowBile)
-{charlatan:->panaceaCharlatan}{!charlatan:panaceaFailure}
+{charlatan:->panaceaCharlatan}{!charlatan:->panaceaFailure}
 -(panaceaCharlatan)
 You gather the ingredients - unicorn horn powder, mercury, sage, and wine - and mix them with a flourish. 
 The resulting mixture is unappealing, but that often works in your favor. To many, an unappealing medicine is expected and a pleasant one is suspect.

@@ -27,6 +27,7 @@ VAR trustEverich = 0
 VAR addaDead = false
 
 // REMEDIES
+VAR totalRemedies = 0
 VAR remedyAddaTincture = false
 VAR remedyLeeches = false
 VAR remedyBloodletting = false
@@ -36,6 +37,7 @@ VAR remedyUnicornPanacea = false
 VAR 10102I_arms = false
 VAR 10102I_neck = false
 VAR 10105I_smellAddaBlood = false
+VAR 10103C_questions = false
 
 // "INVENTORY"
  VAR 10105I_infectedBlood = false

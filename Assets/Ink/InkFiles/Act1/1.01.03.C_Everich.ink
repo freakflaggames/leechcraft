@@ -1,9 +1,9 @@
 //Unlocked at start of game. Triggered by interacting with Everich. Repeatable (see: conversation can be triggered again, but previously chosen options are unavailable)
 === 10103C_Everich ===
+You turn to Everich.
+{10103C_questions:->everichQuestions|->firstInteraction}
 
-You turn to Everich.{!firstInteraction:->firstInteraction|->everichQuestions}
-
-- (firstInteraction)
+= firstInteraction
 <b>EVERICH:</b> Have you ever seen anything like this? 
 The man is baffled and looking to you for reassurance.
     *{physician}<b>LEECH:</b> I've read about similar ailments, but never personally treated anything like this, no. 
@@ -22,7 +22,7 @@ The man is baffled and looking to you for reassurance.
         <b>EVERICH:</b> Oh, thank the Lady. I knew you'd be able to help my girl.
 
 - (everichQuestions)
-
+~ 10103C_questions = true
 *{physician} <b>LEECH:</b> When did she begin to exhibit symptoms?
 
     He looks at you blankly. You sigh.
