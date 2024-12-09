@@ -2789,15 +2789,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4617343907663437632, guid: f4fe2f692e82e4818bae352fb83420aa,
-        type: 3}
-      propertyPath: InkFadeVFX
-      value: 
-      objectReference: {fileID: 999035626}
     - target: {fileID: 7293199669114809685, guid: f4fe2f692e82e4818bae352fb83420aa,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293199669114809685, guid: f4fe2f692e82e4818bae352fb83420aa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
