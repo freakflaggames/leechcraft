@@ -3,6 +3,7 @@ INCLUDE Act1/1.01.02.I_AddaExam.ink
 INCLUDE Act1/1.01.03.C_Everich.ink
 INCLUDE Act1/1.01.04.I_Remedies.ink
 INCLUDE Act1/1.01.05.I_TreatingAdda.ink
+INCLUDE Act1/1.01.06.I_TakingStock.ink
 
 
 // BACKGROUNDS
