@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerController : MonoBehaviour
     PlayerInput input;
 
     public LayerMask GroundMask;
+
+    public GameObject NavigationTarget;
 
     public InteractionSystem Interaction;
     public Inventory PlayerInventory;
@@ -34,6 +37,8 @@ public class PlayerController : MonoBehaviour
         }
         controller = GetComponent<CharacterController>();
         input = GetComponent<PlayerInput>();
+
+        NavigationTarget = Instantiate(NavigationTarget);
     }
     private void Update()
     {
@@ -41,9 +46,14 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, GroundMask))
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                NavigationTarget.transform.DOScale(1.5f, 0.15f).OnComplete(() => { NavigationTarget.transform.DOScale(1, 0.15f); });
+            }
             if (Input.GetMouseButton(0))
             {
                 GetComponent<NavMeshAgent>().SetDestination(hitInfo.point);
+                NavigationTarget.transform.position = new Vector3(hitInfo.point.x, 0.1f, hitInfo.point.z);
             }
         }
     }
