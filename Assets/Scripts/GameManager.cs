@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public SceneLoader SceneLoader;
     public PlayerController Player;
     public InkController InkController;
+    public GameObject PauseMenu;
+    bool paused;
     private void Awake()
     {
         Instance = this;
@@ -28,5 +30,18 @@ public class GameManager : MonoBehaviour
         InkController.knot = knotName;
         InkController.RemoveChildren();
         InkController.StartStory();
+    }
+    public void PauseResume()
+    {
+        if(!paused)
+        {
+            PauseMenu.SetActive(true);
+            paused = true;
+        }
+        else
+        {
+            PauseMenu.SetActive(false);
+            paused = false;
+        }
     }
 }

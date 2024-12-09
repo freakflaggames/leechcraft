@@ -436,6 +436,7 @@ MonoBehaviour:
   SceneLoader: {fileID: 0}
   Player: {fileID: 0}
   InkController: {fileID: 1611404823}
+  PauseMenu: {fileID: 0}
 --- !u!4 &519432274
 Transform:
   m_ObjectHideFlags: 0
