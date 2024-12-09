@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,13 +12,17 @@ public class PlayerController : MonoBehaviour
     CharacterController controller;
     PlayerInput input;
 
+    public LayerMask GroundMask;
+    public LayerMask InteractableMask;
+
+    public GameObject NavigationTarget;
+    public GameObject TargetInteractable;
+
     public InteractionSystem Interaction;
     public Inventory PlayerInventory;
 
     public delegate void OnPlayerCollected();
     public static event OnPlayerCollected playerCollected;
-
-    bool loaded;
 
     //Hannah: added these variables for step audio 
     private float stepCoolDown, stepRateSet;
@@ -31,13 +37,59 @@ public class PlayerController : MonoBehaviour
         }
         controller = GetComponent<CharacterController>();
         input = GetComponent<PlayerInput>();
+
+        NavigationTarget = Instantiate(NavigationTarget);
+    }
+    private void Update()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out var hit, Mathf.Infinity, InteractableMask))
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                NavigationTarget.transform.DOScale(1.5f, 0.15f).OnComplete(() => { NavigationTarget.transform.DOScale(1, 0.15f); });
+                TargetInteractable = hit.collider.gameObject;
+            }
+            if (Input.GetMouseButton(0))
+            {
+                GetComponent<NavMeshAgent>().SetDestination(hit.point);
+                NavigationTarget.transform.position = new Vector3(hit.point.x, 0.1f, hit.point.z);
+            }
+        }
+        else if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, GroundMask) && !GameManager.Instance.InkController.gameObject.activeInHierarchy)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                NavigationTarget.transform.DOScale(1.5f, 0.15f).OnComplete(() => { NavigationTarget.transform.DOScale(1, 0.15f); });
+            }
+            if (Input.GetMouseButton(0))
+            {
+                GetComponent<NavMeshAgent>().SetDestination(hitInfo.point);
+                NavigationTarget.transform.position = new Vector3(hitInfo.point.x, 0.1f, hitInfo.point.z);
+            }
+        }
+
+        if (Vector3.Distance(transform.position,GetComponent<NavMeshAgent>().destination) <= .5f && TargetInteractable != null)
+        {
+            if (TargetInteractable.GetComponent<IInteractable>() != null)
+            {
+                TargetInteractable.GetComponent<IInteractable>().Interact(Interaction);
+            }
+            else
+            {
+                TargetInteractable.transform.parent.GetComponent<IInteractable>().Interact(Interaction);
+            }
+
+            TargetInteractable = null;
+        }
     }
 
     //Hannah: changed to fixed update so the step rate for the sounds would be consistent 
     private void FixedUpdate()
     {
-        Move();
-        Look();
+        //Move();
+        //Look();
     }
 
     void Look()

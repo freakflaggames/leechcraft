@@ -250,6 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inkJSONAsset: {fileID: 4900000, guid: 3424468af014140898691109bdd4a86c, type: 3}
   knot: 
+  saveState: 
   container: {fileID: 3599759083460142675}
   textPrefab: {fileID: 3327169143475422752, guid: 1e0ac85e863e844bf9f05d1db4736340,
     type: 3}
@@ -292,10 +293,10 @@ RectTransform:
   - {fileID: 7809129692089500137}
   m_Father: {fileID: 5430847105016202591}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 550, y: 0}
-  m_SizeDelta: {x: -1100, y: 0}
+  m_AnchoredPosition: {x: -250, y: 0}
+  m_SizeDelta: {x: 500, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7377305638637205091
 CanvasRenderer:

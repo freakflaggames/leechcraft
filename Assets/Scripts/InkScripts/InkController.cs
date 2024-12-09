@@ -13,7 +13,12 @@ public class InkController : MonoBehaviour {
 		RemoveChildren();
 
 		story = new Story(inkJSONAsset.text);
-		SaveSystem.LoadDialogue();
+		//SaveSystem.LoadDialogue();
+	}
+
+	void Start()
+	{
+		gameObject.SetActive(false);
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!

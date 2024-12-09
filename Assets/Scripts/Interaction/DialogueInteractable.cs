@@ -1,29 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using Ink.Runtime;
+using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
 using UnityEngine;
 
 public class DialogueInteractable : MonoBehaviour, IInteractable
 {
-    public string TriggerVariable;
-    public bool Repeatable;
-    public bool Interacted;
-    public string Knot;
-
+    public string[] Knot;
+    public bool[] Repeatable;
+    public bool[] Interacted;
     private void Start()
     {
-        if (TriggerVariable != "")
+        int index = 0;
+        while (index < Knot.Length)
         {
-            bool state = (bool)GameManager.Instance.InkController.story.variablesState[TriggerVariable];
-            print(state);
-            Interacted = state;
+            if (GameManager.Instance.InkController.story.state.VisitCountAtPathString(Knot[index]) > 0)
+            {
+                Interacted[index] = true;
+            }
+            index++;
         }
     }
+    
     public void Interact(InteractionSystem interaction)
     {
-        if (!Interacted && !Repeatable || Repeatable)
+        int index = 0;
+        while (Interacted[index] && !Repeatable[index] && (index < Knot.Length))
         {
-            GameManager.Instance.StartDialogue(Knot);
-            Interacted = true;
+            index++;
+        }
+        if (index < Knot.Length || Knot.Length == 0)
+        {
+            GameManager.Instance.StartDialogue(Knot[index]);
+            Interacted[index] = true;
+        }
+        else
+        {
+            print("no more content!");
         }
     }
 }

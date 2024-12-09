@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterCreation : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class CharacterCreation : MonoBehaviour
     public void Start()
     {
         backgroundSelect.SetActive(true);
-        humorSelect.SetActive(false);
+        //humorSelect.SetActive(false);
     }
 
     public void BackgroundSet(string backgroundSelected)
@@ -82,7 +83,15 @@ public class CharacterCreation : MonoBehaviour
         }
         else if (page == 1)
         {
-            humorSelect.SetActive(false);
+            Ink.Runtime.VariablesState state = GameManager.Instance.InkController.story.state.variablesState;
+            state["physician"] = physician;
+            state["apothecary"] = apothecary;
+            state["barber"] = barber;
+            state["charlatan"] = charlatan;
+
+            StartCoroutine(MainMenu.WaitToLoadScene(0.5f, "LeechHouse_1"));
+            FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
+            //humorSelect.SetActive(false);
             //confirmationscreen active
         }
     }
@@ -91,6 +100,8 @@ public class CharacterCreation : MonoBehaviour
     {
         if (page == 0)
         {
+            StartCoroutine(MainMenu.WaitToLoadScene(0.5f, "MainMenu"));
+            FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
             //to title screen
         }
         else if (page == 1)
