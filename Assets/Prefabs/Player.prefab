@@ -157,6 +157,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 5
   TurnSpeed: 250
+  GroundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  InteractableMask:
+    serializedVersion: 2
+    m_Bits: 0
+  NavigationTarget: {fileID: 0}
+  TargetInteractable: {fileID: 0}
   Interaction: {fileID: 6796294951580890699}
   PlayerInventory: {fileID: 7455966548025921159}
   audioFoot: {fileID: 8416777726574893344}
@@ -375,12 +383,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4c85770f766b80c4bb9dcca9265c014d, type: 2}
+      objectReference: {fileID: 2100000, guid: 13fcf002c3c5e93409dc7f5e36855ac5, type: 2}
     - target: {fileID: 7071182760956848314, guid: 650de70373b3ae24b9164791ed02c3c7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c2c52d26d02de45469e37a2488e33809, type: 2}
+      objectReference: {fileID: 2100000, guid: 3ddf21fe9526649459e3d874dd2c33b0, type: 2}
     - target: {fileID: 7202271454713460447, guid: 650de70373b3ae24b9164791ed02c3c7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
