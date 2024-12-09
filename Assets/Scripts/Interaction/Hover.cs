@@ -7,14 +7,6 @@ public class Hover : MonoBehaviour
 {
     [SerializeField] Material baseMat;
     [SerializeField] Material outline;
-    [SerializeField] LayerMask layer;
-
-    Material setMat;
-
-    private void Start()
-    {
-        setMat = GetComponent<Renderer>().material;
-    }
 
     private void OnMouseOver()
     {
