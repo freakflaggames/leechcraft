@@ -9,6 +9,7 @@ public class ButtonSound : MonoBehaviour
     Button button;
     AudioSource audioSource;
     [SerializeField] AudioClip buttonHover, buttonClick;
+    [SerializeField] GameObject hideShowObj;
 
     void Start()
     {
@@ -25,5 +26,16 @@ public class ButtonSound : MonoBehaviour
     public void ButtonClick()
     {
         audioSource.PlayOneShot(buttonClick);
+    }
+
+    public void HideShow()
+    {
+        bool currentState = false;
+        if(hideShowObj.activeInHierarchy)
+            currentState = true;
+        else
+            currentState = false;
+
+        hideShowObj.SetActive(!currentState);
     }
 }

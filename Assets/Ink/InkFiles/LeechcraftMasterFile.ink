@@ -5,6 +5,9 @@ INCLUDE Act1/1.01.04.I_Remedies.ink
 INCLUDE Act1/1.01.05.I_TreatingAdda.ink
 INCLUDE Act1/1.01.06.I_TakingStock.ink
 
+EXTERNAL CutToBlack()
+EXTERNAL FadeToBlack()
+EXTERNAL FadeFromBlack()
 
 // BACKGROUNDS
 VAR physician = false
