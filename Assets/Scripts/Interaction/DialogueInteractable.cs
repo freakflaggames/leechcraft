@@ -10,7 +10,6 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
     public string[] Knot;
     public bool[] Repeatable;
     public bool[] Interacted;
-
     private void Start()
     {
         int index = 0;
