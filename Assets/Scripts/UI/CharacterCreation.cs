@@ -83,6 +83,12 @@ public class CharacterCreation : MonoBehaviour
         }
         else if (page == 1)
         {
+            Ink.Runtime.VariablesState state = GameManager.Instance.InkController.story.state.variablesState;
+            state["physician"] = physician;
+            state["apothecary"] = apothecary;
+            state["barber"] = barber;
+            state["charlatan"] = charlatan;
+
             StartCoroutine(MainMenu.WaitToLoadScene(0.5f, "LeechHouse_1"));
             FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
             //humorSelect.SetActive(false);
