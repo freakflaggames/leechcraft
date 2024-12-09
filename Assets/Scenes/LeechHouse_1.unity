@@ -5575,6 +5575,26 @@ PrefabInstance:
       propertyPath: Knot
       value: 10104I_Remedies_AddaTincture
       objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.data[0]
+      value: 10104I_Remedies_AddaTincture
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Interacted.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Repeatable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3188308898383433741, guid: ca9cdf99a9974be4cb0ea189070e449b,
         type: 3}
       propertyPath: m_Name
@@ -5734,6 +5754,26 @@ PrefabInstance:
         type: 3}
       propertyPath: TriggerVariable
       value: remedyLeeches
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.data[0]
+      value: 10104I_Remedies_Leeches
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Interacted.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Repeatable.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3188308898383433741, guid: ca9cdf99a9974be4cb0ea189070e449b,
         type: 3}
@@ -10987,6 +11027,26 @@ PrefabInstance:
       propertyPath: Repeatable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.data[0]
+      value: 10103C_Everich
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Interacted.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Repeatable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3188308898383433741, guid: ca9cdf99a9974be4cb0ea189070e449b,
         type: 3}
       propertyPath: m_Name
@@ -11078,6 +11138,26 @@ PrefabInstance:
         type: 3}
       propertyPath: TriggerVariable
       value: 10102I_neck
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.data[0]
+      value: 10102I_AddaExam
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Interacted.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Repeatable.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3188308898383433741, guid: ca9cdf99a9974be4cb0ea189070e449b,
         type: 3}
@@ -20301,6 +20381,26 @@ PrefabInstance:
       propertyPath: Knot
       value: 10104I_Remedies_Bloodletting
       objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.data[0]
+      value: 10104I_Remedies_Bloodletting
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Interacted.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Repeatable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3188308898383433741, guid: ca9cdf99a9974be4cb0ea189070e449b,
         type: 3}
       propertyPath: m_Name
@@ -20404,6 +20504,26 @@ PrefabInstance:
         type: 3}
       propertyPath: Knot
       value: 10104I_Remedies_UnicornPanacea
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Knot.Array.data[0]
+      value: 10104I_Remedies_UnicornPanacea
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Interacted.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
+        type: 3}
+      propertyPath: Repeatable.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3188308898383433741, guid: ca9cdf99a9974be4cb0ea189070e449b,
         type: 3}

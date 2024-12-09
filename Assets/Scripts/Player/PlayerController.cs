@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
                 NavigationTarget.transform.position = new Vector3(hit.point.x, 0.1f, hit.point.z);
             }
         }
-        else if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, GroundMask))
+        else if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, GroundMask) && !GameManager.Instance.InkController.gameObject.activeInHierarchy)
         {
             if (Input.GetMouseButtonDown(0))
             {

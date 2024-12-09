@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
     public void Continue()
     {
         FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
-        StartCoroutine(WaitToLoadScene(0.5f, "Preload"));
+        StartCoroutine(WaitToLoadScene(0.5f, "LeechHouse_1"));
     }
     public static IEnumerator WaitToLoadScene(float time, string sceneName)
     {
