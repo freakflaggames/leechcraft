@@ -42,6 +42,7 @@ VAR 10102I_arms = false
 VAR 10102I_neck = false
 VAR 10105I_smellAddaBlood = false
 VAR 10103C_questions = false
+VAR 10106I_stock = 0
 
 // "INVENTORY"
  VAR 10105I_infectedBlood = false
