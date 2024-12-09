@@ -13,7 +13,7 @@ public class InkController : MonoBehaviour {
 		RemoveChildren();
 
 		story = new Story(inkJSONAsset.text);
-		SaveSystem.LoadDialogue();
+		//SaveSystem.LoadDialogue();
 	}
 
 	void Start()
