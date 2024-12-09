@@ -13,7 +13,10 @@ public class InkController : MonoBehaviour {
 		RemoveChildren();
 
 		story = new Story(inkJSONAsset.text);
-		//SaveSystem.LoadDialogue();
+		story.BindExternalFunction ("CutToBlack",() => {CutToBlack();});
+		story.BindExternalFunction ("FadeToBlack",() => {FadeToBlack();});
+		story.BindExternalFunction ("FadeFromBlack",() => {FadeFromBlack();});
+		SaveSystem.LoadDialogue();
 	}
 
 	void Start()
@@ -133,6 +136,24 @@ public class InkController : MonoBehaviour {
         }
 	}
 
+	void CutToBlack()
+	{
+		InkFade fade = InkFadeVFX.GetComponent<InkFade> ();
+		fade.FadeIn(0,0,0);
+	}
+
+	void FadeToBlack()
+	{
+		InkFade fade = InkFadeVFX.GetComponent<InkFade> ();
+		fade.FadeIn(0,0,1);
+	}
+	
+	void FadeFromBlack()
+	{
+		InkFade fade = InkFadeVFX.GetComponent<InkFade> ();
+		fade.FadeOut(0,0,1);
+	}
+
 	public void Save(ref InkSaveData data)
 	{
 		if (story)
@@ -166,6 +187,10 @@ public class InkController : MonoBehaviour {
 	private Button buttonPrefab = null;
 	[SerializeField]
 	private  Image dividerPrefab = null;
+
+	// Fade to black
+	[SerializeField]
+	private  GameObject InkFadeVFX = null;
 }
 
 [System.Serializable]
