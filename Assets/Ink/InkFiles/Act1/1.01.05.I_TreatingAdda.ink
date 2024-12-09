@@ -15,6 +15,7 @@ The pustules scare you the most. {!charlatan:Perhaps it would be best to lance t
 
 = tincture
 ~ raise(blackBile)
+~ FadeToBlack()
 
 You gather the ingredients - the last of your mandragora root, dried coriander, and redcurrants - and brew a tea.
 
@@ -31,8 +32,8 @@ You send the girl's father home with instructions to return at sunrise. With you
     It's never easy to watch someone lose a loved one, but it is by no means a new experience for you. You give the grieving father the privacy he needs and decide to collect payment for your services some other time.
     Once Everich leaves, you must as well. You need to gather more supplies.
     ** [Leave your home.]
-    
--> END
+        
+        -> END
 
 
 
@@ -43,6 +44,7 @@ You send the girl's father home with instructions to return at sunrise. With you
 
 = leeches
 ~ raise(phlegm)
+~ FadeToBlack()
 The ceramic lid of the jar is cold when you lift it. The wriggling shapes inside stir when you disturb them. {physician:You pick out three, that should do the trick.|You pick out ten, half the amount you would use on an adult.} 
 Everich watches in fascinated disgust.
 {physician:<b>EVERICH:</b> Is it necessary to use that many of them?|<b>EVERICH:</b> And you think this will work?}
@@ -66,7 +68,9 @@ The leeches latch onto the girl's arms easily. Now you must simply wait for them
 Adda hasn't been lucid the entire morning, but she drifts into slumber just a few minutes later - as does her father, slumped in a chair nearby.
 The leeches detach when their bellies are full and you place them back in the jar as dawn arrives. These leeches will be satisfied for months, you will need new, hungrier ones soon.
 With that handled, you can begin what you had originally intended for the day - restocking your medicinal supplies. 
-*[Continue]->END
+*[Continue]
+    ~ FadeFromBlack()
+    ->END
 
 -(leechesFailure)
 You expect the girl to settle as her humors come into balance, but her condition continues to deteriorate. The fever worsens, as does her pain. Adda's struggling weakens and weakens until she falls unconscious.
@@ -76,6 +80,7 @@ The leeches seem to have had no effect, they haven't drained Adda's blood quickl
 
  = bloodletting
 ~ raise(blood)
+~ FadeToBlack()
 ~ 10105I_smellAddaBlood = true
 Rooting out the problem at the apparent source is the most direct route to a solution. 
 You turn to the girl's father.
@@ -101,7 +106,9 @@ Though you cannot clear the illness from her body, the bloodletting has helped t
 *[Staunch the flow.]
     You dress Adda's neck with the last of your bandage. She hasn't been lucid the entire morning, but Adda falls into a deep sleep just a few minutes after you bandage her - as does her father, slumped in a chair nearby.
     With that handled, you can begin what you had originally intended for the day - restocking your medicinal supplies.
-    **[Continue.]-> END
+    **[Continue.]
+        ~ FadeFromBlack()
+        -> END
 
 -(bloodlettingFailure)
 ~ lower(trustEverich)
@@ -116,7 +123,8 @@ You use the last of your bandage to dress her neck, not that it will save her no
 
 
 = panacea
-~raise(yellowBile)
+~ raise(yellowBile)
+~ FadeToBlack()
 {charlatan:->panaceaCharlatan}{!charlatan:->panaceaFailure}
 -(panaceaCharlatan)
 You gather the ingredients - unicorn horn powder, mercury, sage, and wine - and mix them with a flourish. 
@@ -166,4 +174,5 @@ Everich pays you no mind. He picks up Adda like she could shatter in his arms an
 The silence of your home feels heavy, as do the thoughts racing through your mind.
 Regardless, you can now begin what you had originally intended for the day - restocking your medicinal supplies.
 *[Continue.]
-->END
+    ~ FadeFromBlack()
+    ->END
