@@ -10,6 +10,9 @@ public class OpeningDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.StartDialogue(Knot);
+        if (GameManager.Instance.InkController.story.state.VisitCountAtPathString(Knot) < 1)
+        {
+            GameManager.Instance.StartDialogue(Knot);
+        }
     }
 }

@@ -72,6 +72,7 @@ public class InkController : MonoBehaviour {
 		}
 		// If we've read all the content and there's no choices, the story is finished!
 		else {
+			QuestSummary.Instance.UpdateQuestSummary();
 			gameObject.SetActive(false);
 		}
 

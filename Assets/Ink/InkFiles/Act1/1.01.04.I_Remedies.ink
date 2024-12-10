@@ -1,11 +1,11 @@
 //Unlocked at start of game. Triggered by interacting with items around the Leech's house. 
 
 
-//Triggered by interacting with herbs. Unlocks "Tincture for Fever, Pain, & Pustules" remedy.
-== 10104I_Remedies_AddaTincture ==
-~ remedyAddaTincture = true
+//Triggered by interacting with herbs. Unlocks "Tisane for Fever, Pain, & Pustules" remedy.
+== 10104I_Remedies_AddaTisane ==
+~ remedyAddaTisane = true
 ~ raise (totalRemedies)
-You look through the herbs you have on hand. {physician:Coriander could help with the fever, redcurrants resemble the pustules, and a bit of mandragora root should dull the pain without bringing any adverse affects.}{apothecary:Mandragora root for the pain, coriander for the fever, and perhaps a few redcurrants for those pustules... A healing tincture could be just what she needs.}{barber:Herbalism is not your specialty, but mandragora is the most potent anesthetic at your disposal. You could attempt to brew a mandragora root tincture... perhaps with coriander for the fever.}{charlatan:The extent of your knowledge on herbalism comes from a book stolen off of a drunk scholar in the city. It suggests mandragora for pain and coriander for fever, perhaps that will help the girl.}
+You look through the herbs you have on hand. {physician:Coriander could help with the fever, redcurrants resemble the pustules, and a bit of mandragora root should dull the pain without bringing any adverse affects.}{apothecary:Mandragora root for the pain, coriander for the fever, and perhaps a few redcurrants for those pustules... A healing tisane could be just what she needs.}{barber:Herbalism is not your specialty, but mandragora is the most potent anesthetic at your disposal. You could attempt to brew a mandragora root tisane... perhaps with coriander for the fever.}{charlatan:The extent of your knowledge on herbalism comes from a book stolen off of a drunk scholar in the city. It suggests mandragora for pain and coriander for fever, perhaps that will help the girl.}
 
 *[Continue.]-> END
 

@@ -5,40 +5,52 @@
 - (treatingAdda)
 It's clear to see that she's suffering from a form of dyscrasia — an imbalance of the humors — but that appears to be a symptom of something greater. 
 She has an excess of blood, proven by her fever, bruising, and those terrible red growths.
-The pustules scare you the most. {!charlatan:Perhaps it would be best to lance them, but the girl is already in pain and it might be best to let her body fight on its own. The common response for excessive blood is bloodletting, but this may be an uncommon situation.|This is unlike anything you've "healed" before, and you're not sure how many more times you can say it was "the Lady's will" that your patient died. But each remedy you administer is a gamble, and you're feeling lucky.}
-
-*{remedyAddaTincture}<b>REMEDY:</b> Tincture for Fever, Pain, & Pustules -> tincture
+The pustules scare you the most. {not charlatan:Perhaps it would be best to lance them, but the girl is already in pain and it might be best to let her body fight on its own. The common response for excessive blood is bloodletting, but this may be an uncommon situation.|This is unlike anything you've "healed" before, and you're not sure how many more times you can say it was "the Lady's will" that your patient died. But each remedy you administer is a gamble, and you're feeling lucky.}
+*{remedyAddaTisane}<b>REMEDY:</b> Tisane for Fever, Pain, & Pustules -> tisane
 *{remedyLeeches}<b>REMEDY:</b> Leeches -> leeches
 *{remedyBloodletting}<b>REMEDY:</b> Bloodletting -> bloodletting
 *{remedyUnicornPanacea}<b>REMEDY:</b> Unicorn Horn Panacea -> panacea
 
 
-= tincture
+
+= tisane
 ~ raise(blackBile)
 ~ FadeToBlack()
+You gather the ingredients - the last of your mandragora root, dried coriander, and redcurrants - and boil some water.
+{apothecary:Herbalism is a slow and patient sort of medicine. It demands a gentle touch and a keen eye. Old Gritta taught you that, years ago.}{charlatan:Herbalism has always seemed like a joke to you. At least you know your medicine is a farce - apothecaries, on the other hand, seem convinced a few leaves can cure a severed hand. It's a good thing you aren't dealing with a severed hand.}{not apothecary && not charlatan:Herbalism has always seemed like a slow and dull sort of medicine to you. As a healer, it is odd to sit by and wait while your patient suffers.}
+Everich watches silently until you pour the water and wait for the tisane to brew.
+<b>EVERICH:</b> 'Scuse me for asking, Leech, but do you truly think a tea is going to cure this illness?
+*<b>LEECH:</b> It must seem odd to you, but trust me, this should address all of her symptoms.
+    <b>EVERICH:</b> Well, I s'pose you're the healer for a reason.
+    He still seems a bit uncertain.
+*{apothecary}<b>LEECH:</b> Actually, it is a tisane - a tincture would have been preferred, but I lack the proper extracts. Rest assured, it will be more effective than a cup of tea.
+    <b>EVERICH:</b> Ah, apologies.
+    His worries seem calmed, for the moment.
+*{not apothecary}<b>LEECH:</b> It's more accurate to call it a tisane than a tea.
+    He mumbles under his breath.
+    <b>EVERICH:</b> Don't see what difference it makes...
+*{apothecary}<b>LEECH:</b> You underestimate the power of a good cup of tea, Everich.
+    ~ raise (trustEverich)
+    He chuckles at that.
+    <b>EVERICH:</b> Ha! And perhaps you overestimate it. Ah, but I s'pose you'd know your teas better than most.
+-
+Once the tisane is ready, you bring it to Adda and hold it to her mouth to get her to drink. She has hardly been lucid at all, but you manage to get every last drop down her throat. It will take some time for it to take effect.
+*{apothecary}[Wait.]
+*{not apothecary}[Wait.]
 
-You gather the ingredients - the last of your mandragora root, dried coriander, and redcurrants - and brew a tea.
+- (tisaneApothecary)
+Adda hasn't been lucid the entire morning, but she drifts into slumber just a few minutes later - as does her father, slumped in a chair nearby. 
+Mandragora is a testy plant, but you are skilled in your work. Too much is toxic, too little is ineffective. And Adda's age added another level of complexity to the whole thing. It is a relief that she rests easily, even if her illness persists. 
+With that handled, you can begin what you had originally intended for the day - restocking your medicinal supplies. 
+*[Continue]
+    ~ FadeFromBlack()
+    ->END
 
-
-
-
-Your supplies are running low. You make a salve using the last of your mandragora. You apply it to the pustules and get to work brewing a tea that should help with the fever.
-It's not much, but you are hesitant to let her blood at this stage, whether by leech or blade. 
-You send the girl's father home with instructions to return at sunrise. With your medicinals administered, all anyone can do is wait. 
-*[Wait.]
-    You pass the time combing through your books for any sort of similar ailment. You've never seen anything like this, and it seems nobody else has either. 
-    The girl's condition steadily worsens, despite your best efforts. The pustules on her neck burst in a gory spray and her fever is nigh unstoppable. You wrap her neck to stop the bleeding, but the illness has done its work. 
-    Adda passes just as the sun rises, mere moments before her father arrives.
-    It's never easy to watch someone lose a loved one, but it is by no means a new experience for you. You give the grieving father the privacy he needs and decide to collect payment for your services some other time.
-    Once Everich leaves, you must as well. You need to gather more supplies.
-    ** [Leave your home.]
-        
-        -> END
-
-
-
-
-
+- (tisaneFailure)
+You expect the girl to settle as her humors come into balance, but her condition continues to deteriorate. The fever worsens, as does her pain. Adda's struggling weakens and weakens until she falls unconscious.
+The tisane has had no effect. Any number of things could have gone wrong. Perhaps you used too much mandragora, or too little. Perhaps the herbs lost their potentcy. Perhaps they weren't even the correct herbs. 
+Regardless, you lack the time to try another treatment. 
+*[Think.]-> addaDeath
 
 
 
@@ -49,20 +61,21 @@ The ceramic lid of the jar is cold when you lift it. The wriggling shapes inside
 Everich watches in fascinated disgust.
 {physician:<b>EVERICH:</b> Is it necessary to use that many of them?|<b>EVERICH:</b> And you think this will work?}
 *{physician}<b>LEECH:</b> It may seem like a lot, but each only sucks a small amount of blood. And she has quite an excess of it at the moment.
+    ~ raise (trustEverich)
     <b>EVERICH:</b> Ah, okay.
-    He still seems uncertain.
+    Though the worms unsettle him, Everich calms a bit.
 *{physician}<b>LEECH:</b> Do you want her to get better?
     He grumbles, but says nothing.
-*{!physician}<b>LEECH:</b> Yes, the leeches will suck her excess blood, but won't put her at risk of losing too much.
+*{not physician}<b>LEECH:</b> Yes, the leeches will suck her excess blood, but won't put her at risk of losing too much.
     <b>EVERICH:</b> Ah, okay.
     He still seems uncertain.
-*{!physician}<b>LEECH:</b> I hope so.
+*{not physician}<b>LEECH:</b> I hope so.
     He looks at you, concerned. 
     <b>EVERICH:</b> Well, that's hardly a comfort, Leech.
 -
 The leeches latch onto the girl's arms easily. Now you must simply wait for them to {physician:work their magic|do their work}.
 * {physician}[Wait.]->leechesPhysician
-* {!physician}[Wait.]->leechesFailure
+* {not physician}[Wait.]->leechesFailure
 
 -(leechesPhysician)
 Adda hasn't been lucid the entire morning, but she drifts into slumber just a few minutes later - as does her father, slumped in a chair nearby.
@@ -75,7 +88,8 @@ With that handled, you can begin what you had originally intended for the day - 
 -(leechesFailure)
 You expect the girl to settle as her humors come into balance, but her condition continues to deteriorate. The fever worsens, as does her pain. Adda's struggling weakens and weakens until she falls unconscious.
 The leeches seem to have had no effect, they haven't drained Adda's blood quickly enough. And with how she's faring, you don't have the time to try another treatment. 
--> addaDeath
+*[Think.]-> addaDeath
+
 
 
  = bloodletting
@@ -85,20 +99,34 @@ The leeches seem to have had no effect, they haven't drained Adda's blood quickl
 Rooting out the problem at the apparent source is the most direct route to a solution. 
 You turn to the girl's father.
 *<b>LEECH:</b> Hold her still. I'm going to drain those growths.
-    Everich gently grabs her shoulders. After a moment, her squirming ceases. Perfect.
-    You carefully slice the skin of each pustule with your lancet. Dark, sick blood, pours from the cuts. It almost smells sour.
-    You press a bowl to the steady flow of blood. The wounds must drain until the blood runs clean.
-        **[Wait.]
-            Everich passes you a new bowl when you ask for it. He hesitates as you hand him the bowl full of blood.
-            <b>EVERICH:</b> Leech... what am I to do with this?
-            He's completely lost. {physician:Suddenly you miss the busy clinic back in the city.}{apothecary:Suddenly you miss Old Gritta and your days as her apprentice.}{barber:Suddenly you miss the battlefield, mercenaries make much better assistants.}{charlatan:You can't help but relate.}
+-
+Everich looks at you with wide eyes. 
+<b>EVERICH:</b> You're taking a knife to her neck?
+    *<b>LEECH:</b> Yes, and you're going to help me keep her still.
+        He seems unhappy, but he speaks after a moment of hesitation.
+        <b>EVERICH:</b> If we've no other choice... Fine.
+    *{barber}<b>LEECH:</b> These pustules are the root of her illness. If I don't drain the infected blood, she will die. 
+        ~ raise (trustEverich)
+        He fear only grows, but so does his resolve.
+        <b>EVERICH:</b> Alright. I trust you, Leech. With my daughter's life, I trust you.
+    *<b>LEECH:</b> Calm down, Everich. I promise I will be careful.
+        He looks at you, concerned. 
+        <b>EVERICH:</b> That's hardly a comfort, Leech. But if it must be done...
+-
+Everich gently grabs her shoulders. After a moment, her squirming ceases. Perfect.
+You carefully slice the skin of each pustule with your lancet. Dark, sick blood, pours from the cuts. It almost smells sour.
+You press a bowl to the steady flow of blood. The wounds must drain until the blood runs clean.
+    *[Wait.]
+        Everich passes you a new bowl when you ask for it. He hesitates as you hand him the bowl full of blood.
+        <b>EVERICH:</b> Leech... what am I to do with this?
+        He's completely lost. {physician:Suddenly you miss the busy clinic back in the city.}{apothecary:Suddenly you miss Old Gritta and your days as her apprentice.}{barber:Suddenly you miss the battlefield, mercenaries make much better assistants.}{charlatan:You can't help but relate.}
 - 
 *<b>LEECH:</b> Set it on the table there, I'll deal with it later.
     ~ 10105I_infectedBlood = true
     <b>EVERICH:</b> As you say.
-    He places it among your tools and clutter, then returns to his daughter's side.{barber:->bloodlettingBarber}{!barber:->bloodlettingFailure}
-*<b>LEECH:<b> Dump it outside. I have no need of it. 
-    You hear the door open, the splat of blood on dead leaves, then Everich returns.{barber:->bloodlettingBarber}{!barber:->bloodlettingFailure}
+    He places it among your tools and clutter, then returns to his daughter's side.{barber:->bloodlettingBarber}{not barber:->bloodlettingFailure}
+*<b>LEECH:</b> Dump it outside. I have no need of it. 
+    You hear the door open, the splat of blood on dead leaves, then Everich returns.{barber:->bloodlettingBarber}{not barber:->bloodlettingFailure}
 
 -(bloodlettingBarber)
 There seems to be no end to the tainted blood. As the second bowl fills, you know that you have reached the limit of what you can safely drain from the girl. 
@@ -111,10 +139,9 @@ Though you cannot clear the illness from her body, the bloodletting has helped t
         -> END
 
 -(bloodlettingFailure)
-~ lower(trustEverich)
 There seems to be no end to the tainted blood. You fill a second bowl, then a third, before Adda falls unconscious. You aren't practiced in bloodletting, but it doesn't take a barber-surgeon to know that's bad.
-You use the last of your bandage to dress her neck, not that it will save her now.
--> addaDeath
+You grab the last of your bandage to dress her neck, not that it will save her now.
+*[Wrap the wounds.]-> addaDeath
 
 
 
@@ -125,7 +152,7 @@ You use the last of your bandage to dress her neck, not that it will save her no
 = panacea
 ~ raise(yellowBile)
 ~ FadeToBlack()
-{charlatan:->panaceaCharlatan}{!charlatan:->panaceaFailure}
+{charlatan:->panaceaCharlatan}{not charlatan:->panaceaFailure}
 -(panaceaCharlatan)
 You gather the ingredients - unicorn horn powder, mercury, sage, and wine - and mix them with a flourish. 
 The resulting mixture is unappealing, but that often works in your favor. To many, an unappealing medicine is expected and a pleasant one is suspect.
@@ -146,6 +173,7 @@ You gather the ingredients - unicorn horn powder for this mysterious illness, me
     
 = addaDeath
 ~ addaDead = true
+~ lower(trustEverich)
 Everich must see something in your expression. He tries to gently shake her awake.
 <b>EVERICH:</b> Adda, darling... please. Wake up. 
 His voice catches in his throat and he turns to you, brow furrowed and hands shaking.

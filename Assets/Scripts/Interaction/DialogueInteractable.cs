@@ -10,6 +10,8 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
     public string[] Knot;
     public bool[] Repeatable;
     public bool[] Interacted;
+    public bool[] Interactable;
+
     private void Start()
     {
         int index = 0;
@@ -26,14 +28,23 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
     public void Interact(InteractionSystem interaction)
     {
         int index = 0;
-        while (Interacted[index] && !Repeatable[index] && (index < Knot.Length))
+
+        if(Knot.Length == 1 && !Repeatable[0] && Interacted[0])
+        {
+            Interactable[0] = false;
+        }
+
+        while (Interacted[index] && !Repeatable[index] && index < Knot.Length && Knot.Length != 1)
         {
             index++;
         }
-        if (index < Knot.Length || Knot.Length == 0)
+        if (index < Knot.Length)
         {
-            GameManager.Instance.StartDialogue(Knot[index]);
-            Interacted[index] = true;
+            if(Interactable[index])
+            {
+                GameManager.Instance.StartDialogue(Knot[index]);
+                Interacted[index] = true;
+            }
         }
         else
         {
