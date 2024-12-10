@@ -10,6 +10,7 @@ public class QuestSummary : MonoBehaviour
     //just for now:
     public GameObject[] StockItem;
     public GameObject[] Remedy;
+    public GameObject Adda, Everich;
 
     // 0 = Examine; 1 = Everich; 2 = Remedies; 3 = Heal; 4 = Stock; 5 = Village
 
@@ -92,6 +93,21 @@ public class QuestSummary : MonoBehaviour
 
         DialogueInteractable dialInt4 = StockItem[4].GetComponent<DialogueInteractable>();
         dialInt4.Interactable[0] = true;
+
+        // set adda and everich inactive if they left. make them uninteractable if not
+        if((bool)GameManager.Instance.InkController.story.variablesState["addaDead"])
+        {
+            Adda.SetActive(false);
+            Everich.SetActive(false);
+        }
+        else
+        {
+            DialogueInteractable AddaDialInt = Adda.GetComponent<DialogueInteractable>();
+            AddaDialInt.Interactable[1] = false;
+            DialogueInteractable EverichDialInt = Everich.GetComponent<DialogueInteractable>();
+            EverichDialInt.Interactable[0] = false;
+        }
+
     }
     
 }
