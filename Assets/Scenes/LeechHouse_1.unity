@@ -10095,34 +10095,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89b46b6b86b79d0479bb24ec204254af, type: 3}
---- !u!1 &741032467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3377862050941540407, guid: 58da53f4a16f14741b61cc88a3313b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 8150366682714165897}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &741032468
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741032467}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!4 &742783928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6366122573521269519, guid: a4f19ad5b0b9cf14caa4626895c9ed55,
@@ -27729,32 +27701,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2457146430275436778, guid: 58da53f4a16f14741b61cc88a3313b00,
-        type: 3}
-      propertyPath: stepRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2457146430275436778, guid: 58da53f4a16f14741b61cc88a3313b00,
-        type: 3}
-      propertyPath: MoveSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2457146430275436778, guid: 58da53f4a16f14741b61cc88a3313b00,
-        type: 3}
-      propertyPath: NavigationTarget
-      value: 
-      objectReference: {fileID: 6461511425795918720, guid: 4d82a64e3640a354694934f0979ae928,
-        type: 3}
-    - target: {fileID: 2457146430275436778, guid: 58da53f4a16f14741b61cc88a3313b00,
-        type: 3}
-      propertyPath: GroundMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2457146430275436778, guid: 58da53f4a16f14741b61cc88a3313b00,
-        type: 3}
-      propertyPath: InteractableMask.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 3377862050941540407, guid: 58da53f4a16f14741b61cc88a3313b00,
         type: 3}
       propertyPath: m_Name
@@ -27764,11 +27710,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3989639293087478535, guid: 58da53f4a16f14741b61cc88a3313b00,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5785926885097501250, guid: 58da53f4a16f14741b61cc88a3313b00,
         type: 3}
@@ -27843,11 +27784,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3377862050941540407, guid: 58da53f4a16f14741b61cc88a3313b00,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 741032468}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58da53f4a16f14741b61cc88a3313b00, type: 3}
 --- !u!33 &8168969871424009118
 MeshFilter:
