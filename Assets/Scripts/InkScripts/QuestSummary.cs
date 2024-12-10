@@ -117,6 +117,7 @@ public class QuestSummary : MonoBehaviour
 
             DialogueInteractable EverichDialInt = Everich.GetComponent<DialogueInteractable>();
             EverichDialInt.Interactable[0] = false;
+            EverichDialInt.Interactable[1] = true;
         }
     } 
 }

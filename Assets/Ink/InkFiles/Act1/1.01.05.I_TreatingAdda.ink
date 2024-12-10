@@ -35,8 +35,8 @@ Everich watches silently until you pour the water and wait for the tisane to bre
     <b>EVERICH:</b> Ha! And perhaps you overestimate it. Ah, but I s'pose you'd know your teas better than most.
 -
 Once the tisane is ready, you bring it to Adda and hold it to her mouth to get her to drink. She has hardly been lucid at all, but you manage to get every last drop down her throat. It will take some time for it to take effect.
-*{apothecary}[Wait.]
-*{not apothecary}[Wait.]
+*{apothecary}[Wait.]->tisaneApothecary
+*{not apothecary}[Wait.]->tisaneFailure
 
 - (tisaneApothecary)
 Adda hasn't been lucid the entire morning, but she drifts into slumber just a few minutes later - as does her father, slumped in a chair nearby. 
@@ -145,44 +145,56 @@ You grab the last of your bandage to dress her neck, not that it will save her n
 
 
 
-
-
-
-
 = panacea
 ~ raise(yellowBile)
 ~ FadeToBlack()
-{charlatan:->panaceaCharlatan}{not charlatan:->panaceaFailure}
--(panaceaCharlatan)
-You gather the ingredients - unicorn horn powder, mercury, sage, and wine - and mix them with a flourish. 
-The resulting mixture is unappealing, but that often works in your favor. To many, an unappealing medicine is expected and a pleasant one is suspect.
-
+{charlatan:You gather the ingredients - unicorn horn powder, mercury, sage, and wine - and mix them with a flourish.|You gather the ingredients - unicorn horn powder for this mysterious illness, mercury for the bruises, sage for the pain, and wine for flavor.} 
+The resulting mixture is unappealing, {charlatan:but that often works in your favor. To many, an unappealing medicine is expected and a pleasant one is suspect.|but many medicines are.}
+<b>EVERICH:</b> Where do you get unicorn horn powder these days, anyway?
+*{charlatan}<b>LEECH:</b> I happen to know the last reliable unicorn hunter this side of the mountains. We met some years ago while I was travelling.
+    You have always been a talented liar. When he searches your face and sees no falsehood, he leans forward in interest.
+    <b>EVERICH:</b> Now that must be some tale. Perhaps you can tell it to me sometime.
+*{charlatan}<b>LEECH:</b> Around three years ago I came across a unicorn on my travels. Though it pained me to kill it, I knew this powder could save lives.
+    <b>EVERICH:</b> Oh, surely you jest...
+    You have always been a talented liar. When he searches your face and sees no falsehood, he leans forward in interest.
+    <b>EVERICH:</b> By the Lady... Some other day you must tell me the tale.
+*{not charlatan}<b>LEECH:</b> From that merchant that came through in the spring, with the braided beard and red cart. 
+    <b>EVERICH:</b> Ah, how could I forget. He tried to trade three empty flasks for the shoes off my feet. Odd man.
+*<b>LEECH:</b> I wouldn't want to ruin the mystery, now would I?
+    ~ lower (trustEverich)
+    He grumbles, but says nothing.
+-
+*[Give Adda the panacea.]
+{charlatan:The performance of medicine is a delicate art - it must be logical, yet equal parts mysterious and magical. The illusion must be perfect to deceive the body into healing itself.|Using ingredients like "unicorn horn powder" is always a risk, especially without testing them first, but this is a dire situation. You can only hope that this is real, and not any number of poor substitutes - ram horn powder, sawdust, or even something actively harmful.}
+{charlatan:This phenomenon has allowed you to take up a career in medicine despite having more experience in ending a life than saving one.}
+You bring the mixture to Adda and hold it to her mouth to make her drink. She has hardly been lucid at all, but you manage to get every last drop down her throat with only a little difficulty.
+*[Wait.]->panaceaFailure
 
 -(panaceaFailure)
-You gather the ingredients - unicorn horn powder for this mysterious illness, mercury for the bruises, sage for the pain, and wine for flavor. 
-
-    -> addaDeath
-    
-    
-    
-    
-    
-    
+It doesn't take long for Adda's condition to deteriorate. The fever worsens, she develops a relentless cough, and her shivering becomes uncontrollable shaking. 
+You barely have time to consider a solution {charlatan: - or what lie you'll tell Everich to explain why the medicine failed -} before she falls unconscious. She has little time, but maybe there's still something you can do.
+*[Think.] -> addaDeath
     
     
     
 = addaDeath
 ~ addaDead = true
 ~ lower(trustEverich)
-Everich must see something in your expression. He tries to gently shake her awake.
+{panacea:Everich immediately tries desperately to shake her awake.|Everich must see something in your expression. He tries to gently shake her awake.}
 <b>EVERICH:</b> Adda, darling... please. Wake up. 
 His voice catches in his throat and he turns to you, brow furrowed and hands shaking.
 <b>EVERICH:</b> What have you done, Leech? 
 *{bloodletting}<b>LEECH:</b> She's lost too much blood, the infection went too deep. I don't think I can save her.
     He turns back to his daughter. 
     <b>EVERICH:</b> I'm taking her home.
-*{leeches}<b>LEECH:</b> The leeches aren't working. She still has too much blood, and I worry it might be too late.
+*{leeches}<b>LEECH:</b> The leeches aren't working. She still has too much blood in her body, and I worry it might be too late.
     He turns back to his daughter. 
+    <b>EVERICH:</b> I'm taking her home.
+*{tisane}<b>LEECH:</b> The tisane isn't working and the illness has weakened her too much. It may be too late for her, but I can try.
+    He turns back to his daughter. 
+    <b>EVERICH:</b> No. I'm taking her home.
+*{panacea}<b>LEECH:</b> That panacea was a last resort. I don't think I can help her now.
+    He looks at you incredulously, his anger growing.
     <b>EVERICH:</b> I'm taking her home.
 *<b>LEECH:</b> I'm sorry.
     He turns back to his daughter and sobs.
@@ -190,6 +202,9 @@ His voice catches in his throat and he turns to you, brow furrowed and hands sha
 *<b>LEECH:</b> She'll be okay, just let me do my work.
     He looks at you incredulously, his anger growing.
     <b>EVERICH:</b> No. I'm taking her home. 
+*{charlatan && panacea}<b>LEECH:</b> This is perfectly normal. She'll wake in a few hours, purged of her illness. Just let her rest.
+    He looks at you incredulously, his anger growing. He doesn't believe you.
+    <b>EVERICH:</b> No. I'm taking her home, before you put any more poison in her.
 *[Say nothing.]
     He turns back to his daughter. 
     <b>EVERICH:</b> I'm taking her home.
@@ -199,7 +214,7 @@ His voice catches in his throat and he turns to you, brow furrowed and hands sha
 *<b>LEECH:</b> I'm sorry, Everich.
 -
 Everich pays you no mind. He picks up Adda like she could shatter in his arms and walks out the door.
-The silence of your home feels heavy, as do the thoughts racing through your mind.
+The silence of your home feels heavy, as do the thoughts racing through your mind. 
 Regardless, you can now begin what you had originally intended for the day - restocking your medicinal supplies.
 *[Continue.]
     ~ FadeFromBlack()
