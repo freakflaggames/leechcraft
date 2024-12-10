@@ -7,6 +7,9 @@ public class QuestSummary : MonoBehaviour
     public static QuestSummary Instance;
     public GameObject[] Objective;
     public GameObject[] Complete;
+    //just for now:
+    public GameObject[] StockItem;
+    public GameObject[] Remedy;
 
     // 0 = Examine; 1 = Everich; 2 = Remedies; 3 = Heal; 4 = Stock; 5 = Village
 
@@ -58,6 +61,8 @@ public class QuestSummary : MonoBehaviour
             Objective[3].SetActive(false);
             // Add "Take Stock" to objective list
             Objective[4].SetActive(true);
+            // make the items interactable:
+            JankyDialogueFix();
         }
 
         if((int)GameManager.Instance.InkController.story.variablesState["10106I_stock"] == 5)
@@ -65,6 +70,28 @@ public class QuestSummary : MonoBehaviour
             Complete[4].SetActive(true);
             Objective[5].SetActive(true);
         }
+    }
+
+    // replace this with something better
+    void JankyDialogueFix()
+    {
+        //make stock items interactable & skip remedy dialogue with the first 2 objects
+        DialogueInteractable dialInt0 = StockItem[0].GetComponent<DialogueInteractable>();
+        dialInt0.Interactable[1] = true;
+        dialInt0.Interacted[0] = true;
+
+        DialogueInteractable dialInt1 = StockItem[1].GetComponent<DialogueInteractable>();
+        dialInt1.Interactable[1] = true;
+        dialInt1.Interacted[0] = true;
+
+        DialogueInteractable dialInt2 = StockItem[2].GetComponent<DialogueInteractable>();
+        dialInt2.Interactable[0] = true;
+
+        DialogueInteractable dialInt3 = StockItem[3].GetComponent<DialogueInteractable>();
+        dialInt3.Interactable[0] = true;
+
+        DialogueInteractable dialInt4 = StockItem[4].GetComponent<DialogueInteractable>();
+        dialInt4.Interactable[0] = true;
     }
     
 }

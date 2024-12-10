@@ -32,7 +32,7 @@ VAR addaDead = false
 
 // REMEDIES
 VAR totalRemedies = 0
-VAR remedyAddaTincture = false
+VAR remedyAddaTisane = false
 VAR remedyLeeches = false
 VAR remedyBloodletting = false
 VAR remedyUnicornPanacea = false

@@ -31,7 +31,7 @@ The man is baffled and looking to you for reassurance.
         
         <b>EVERICH:</b> Oh. 'Bout two days ago she got a fever. Complained about 'er head. -> everichQuestions
 
-*{!physician}<b>LEECH:</b> When did she start acting sick?
+*{not physician}<b>LEECH:</b> When did she start acting sick?
     
     <b>EVERICH:</b> 'Bout two days ago she got a fever. Complained about 'er head. -> everichQuestions
 
