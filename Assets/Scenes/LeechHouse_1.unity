@@ -6113,6 +6113,7 @@ MonoBehaviour:
   Remedy: []
   Adda: {fileID: 1269416879}
   Everich: {fileID: 1829382441}
+  StockObjective: {fileID: 733460042}
 --- !u!114 &204744947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6783,7 +6784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 50
-    m_Right: 50
+    m_Right: 0
     m_Top: 50
     m_Bottom: 50
   m_ChildAlignment: 0
@@ -10157,6 +10158,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89b46b6b86b79d0479bb24ec204254af, type: 3}
+--- !u!1 &733460042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5278855281170548658, guid: 3834f099fbfeb47a5a9b272cef6add60,
+    type: 3}
+  m_PrefabInstance: {fileID: 1158497728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &741032467 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3377862050941540407, guid: 58da53f4a16f14741b61cc88a3313b00,
@@ -13055,6 +13062,11 @@ PrefabInstance:
       propertyPath: m_text
       value: ' Take stock of your supplies'
       objectReference: {fileID: 0}
+    - target: {fileID: 82077066742332462, guid: 3834f099fbfeb47a5a9b272cef6add60,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -51.11537
+      objectReference: {fileID: 0}
     - target: {fileID: 1255885926608626081, guid: 3834f099fbfeb47a5a9b272cef6add60,
         type: 3}
       propertyPath: m_Name
@@ -13078,7 +13090,7 @@ PrefabInstance:
     - target: {fileID: 2488234928475889746, guid: 3834f099fbfeb47a5a9b272cef6add60,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 143.21179
+      value: 167.5
       objectReference: {fileID: 0}
     - target: {fileID: 2488234928475889746, guid: 3834f099fbfeb47a5a9b272cef6add60,
         type: 3}
@@ -13138,7 +13150,7 @@ PrefabInstance:
     - target: {fileID: 8350867510223698177, guid: 3834f099fbfeb47a5a9b272cef6add60,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 251.42358
+      value: 300.8274
       objectReference: {fileID: 0}
     - target: {fileID: 8350867510223698177, guid: 3834f099fbfeb47a5a9b272cef6add60,
         type: 3}
@@ -13183,12 +13195,12 @@ PrefabInstance:
     - target: {fileID: 8350867510223698177, guid: 3834f099fbfeb47a5a9b272cef6add60,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175.71179
+      value: 200.4137
       objectReference: {fileID: 0}
     - target: {fileID: 8350867510223698177, guid: 3834f099fbfeb47a5a9b272cef6add60,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -250.5
+      value: -215.5
       objectReference: {fileID: 0}
     - target: {fileID: 8350867510223698177, guid: 3834f099fbfeb47a5a9b272cef6add60,
         type: 3}
@@ -13616,7 +13628,7 @@ PrefabInstance:
     - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
         type: 3}
       propertyPath: Repeatable.Array.data[1]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2647234515270442109, guid: ca9cdf99a9974be4cb0ea189070e449b,
         type: 3}

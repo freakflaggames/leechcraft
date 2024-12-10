@@ -20,7 +20,7 @@
 //Unlocked after treating Adda. Triggered by interacting with a wine bottle.
 === 10106I_Wine ===
 ~ raise (10106I_stock)
-{10105I_TreatingAdda.panacea:You used the last of your wine in the panacea.|You appear to be running low on wine, which can be just as useful in healing as it is in daily life.} The merchant should have wine, if he's even still in town.
+{10105I_TreatingAdda.panacea:You used the last of your wine in the panacea.|You appear to be running low on wine, which can be just as useful in healing as it is in daily life.} The merchant should have some, if he's even still in town.
 
 *[Continue.]->END
 

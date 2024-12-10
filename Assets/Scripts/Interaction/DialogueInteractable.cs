@@ -20,6 +20,8 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
             if (GameManager.Instance.InkController.story.state.VisitCountAtPathString(Knot[index]) > 0)
             {
                 Interacted[index] = true;
+                if(!Repeatable[index])
+                    Interactable[index] = false;
             }
             index++;
         }
@@ -34,16 +36,19 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
             Interactable[0] = false;
         }
 
-        while (Interacted[index] && !Repeatable[index] && index < Knot.Length && Knot.Length != 1)
+        while (!Interactable[index] && index <= Knot.Length - 2)
         {
             index++;
         }
-        if (index < Knot.Length)
+        if (index <  Knot.Length)
         {
             if(Interactable[index])
             {
                 GameManager.Instance.StartDialogue(Knot[index]);
                 Interacted[index] = true;
+
+                if(!Repeatable[index])
+                    Interactable[index] = false;
             }
         }
         else

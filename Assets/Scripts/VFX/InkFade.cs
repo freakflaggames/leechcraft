@@ -27,8 +27,6 @@ public class InkFade : MonoBehaviour
         FadeImage.DOColor(new Color(0,0,0,0), fadeOutTime);
 
         yield return new WaitForSeconds(fadeOutTime);
-
-        FadeImage.gameObject.SetActive(false);
     }
 
     public void FadeIn(float fadeInTime, float holdTime, float fadeOutTime)
@@ -38,8 +36,6 @@ public class InkFade : MonoBehaviour
 
     public IEnumerator FadeInCoroutine(float fadeInTime, float holdTime, float fadeOutTime)
     {
-        FadeImage.gameObject.SetActive(true);
-
         FadeImage.DOColor(new Color(0,0,0,0), fadeInTime);
 
         yield return new WaitForSeconds(fadeInTime);

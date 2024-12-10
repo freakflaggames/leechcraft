@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Ink.Parsed;
+using TMPro;
 using UnityEngine;
 
 public class QuestSummary : MonoBehaviour
@@ -11,6 +13,7 @@ public class QuestSummary : MonoBehaviour
     public GameObject[] StockItem;
     public GameObject[] Remedy;
     public GameObject Adda, Everich;
+    public GameObject StockObjective;
 
     // 0 = Examine; 1 = Everich; 2 = Remedies; 3 = Heal; 4 = Stock; 5 = Village
 
@@ -52,6 +55,8 @@ public class QuestSummary : MonoBehaviour
                 Objective[1].SetActive(false);
                 Objective[2].SetActive(false);
                 Objective[3].SetActive(true);
+                DialogueInteractable AddaDialInt = Adda.GetComponent<DialogueInteractable>();
+                AddaDialInt.Interactable[1] = true;
             }
         }
 
@@ -64,6 +69,10 @@ public class QuestSummary : MonoBehaviour
             Objective[4].SetActive(true);
             // make the items interactable:
             JankyDialogueFix();
+            //update stock item count:
+            TextMeshProUGUI stockObjectiveText = StockObjective.GetComponent<TextMeshProUGUI>();
+            int currentStock = (int)GameManager.Instance.InkController.story.variablesState["10106I_stock"];
+            stockObjectiveText.text = "Take stock of your supplies (" + currentStock.ToString() + "/5)";
         }
 
         if((int)GameManager.Instance.InkController.story.variablesState["10106I_stock"] == 5)
@@ -102,12 +111,12 @@ public class QuestSummary : MonoBehaviour
         }
         else
         {
+            //adda's left in as a failsafe
             DialogueInteractable AddaDialInt = Adda.GetComponent<DialogueInteractable>();
             AddaDialInt.Interactable[1] = false;
+
             DialogueInteractable EverichDialInt = Everich.GetComponent<DialogueInteractable>();
             EverichDialInt.Interactable[0] = false;
         }
-
-    }
-    
+    } 
 }
