@@ -168,6 +168,7 @@ The resulting mixture is unappealing, {charlatan:but that often works in your fa
 {charlatan:The performance of medicine is a delicate art - it must be logical, yet equal parts mysterious and magical. The illusion must be perfect to deceive the body into healing itself.|Using ingredients like "unicorn horn powder" is always a risk, especially without testing them first, but this is a dire situation. You can only hope that this is real, and not any number of poor substitutes - ram horn powder, sawdust, or even something actively harmful.}
 {charlatan:This phenomenon has allowed you to take up a career in medicine despite having more experience in ending a life than saving one.}
 You bring the mixture to Adda and hold it to her mouth to make her drink. She has hardly been lucid at all, but you manage to get every last drop down her throat with only a little difficulty.
+-
 *[Wait.]->panaceaFailure
 
 -(panaceaFailure)
@@ -199,9 +200,12 @@ His voice catches in his throat and he turns to you, brow furrowed and hands sha
 *<b>LEECH:</b> I'm sorry.
     He turns back to his daughter and sobs.
     <b>EVERICH:</b> I'm taking her home.
-*<b>LEECH:</b> She'll be okay, just let me do my work.
+*{not charlatan}<b>LEECH:</b> She'll be okay, just let me do my work.
     He looks at you incredulously, his anger growing.
     <b>EVERICH:</b> No. I'm taking her home. 
+{charlatan && not panacea}<b>LEECH:</b> She'll be okay, you just have to trust me.
+    He looks at you incredulously, his anger growing.
+    <b>EVERICH:</b> No, I trusted you this far and look at where that got me. I'm taking her home. 
 *{charlatan && panacea}<b>LEECH:</b> This is perfectly normal. She'll wake in a few hours, purged of her illness. Just let her rest.
     He looks at you incredulously, his anger growing. He doesn't believe you.
     <b>EVERICH:</b> No. I'm taking her home, before you put any more poison in her.
