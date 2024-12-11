@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Ink.Parsed;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class QuestSummary : MonoBehaviour
 {
@@ -47,6 +48,8 @@ public class QuestSummary : MonoBehaviour
 
         if((int)GameManager.Instance.InkController.story.variablesState["totalRemedies"] > 0)
         {
+            Debug.Log("running remedy stuff");
+
             Complete[2].SetActive(true);
             prereq++;
             // No matter what order you do the objectives in, this should work because of how the script is read
@@ -63,8 +66,10 @@ public class QuestSummary : MonoBehaviour
             }
         }
 
-        if(GameManager.Instance.InkController.story.state.VisitCountAtPathString("10105I_TreatingAdda") > 0)
+        if(GameManager.Instance.InkController.story.state.VisitCountAtPathString("10105I_TreatingAdda") > 0 && prereq == 3)
         {
+            Debug.Log("running stock stuff");
+
             // Remove "Heal Adda" from objective list
             // Complete[3].SetActive(true);
             Objective[3].SetActive(false);

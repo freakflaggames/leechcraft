@@ -20,6 +20,7 @@ Leeches. {physician:Magical little creatures, to the uneducated. To you, they ar
 //Triggered by interacting with a lancet. Unlocks "Bloodletting" remedy.
 == 10104I_Remedies_Bloodletting ==
 ~ remedyBloodletting = true
+~ raise (totalRemedies)
 Your lancet{physician:. Though the messy work or surgery is beneath you, this place has given you little choice in the matter.}{apothecary:. You prefer to avoid playing the butcher, but at times it is necessary.}{barber:, one of the most oft-used tools in your arsenal. There are few problems that can't be solved with a blade.}{charlatan:. Little more than a dagger, if you're honest. In your hands, a blade is more often used to end a life than save one.}
 
 *[Continue.]-> END
