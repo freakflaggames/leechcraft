@@ -123,7 +123,7 @@ public class QuestSummary : MonoBehaviour
         dialInt7.Interactable[0] = false;
         dialInt7.Interacted[0] = true;
 
-        DialogueInteractable dialInt8 = Remedy[1].GetComponent<DialogueInteractable>();
+        DialogueInteractable dialInt8 = Remedy[3].GetComponent<DialogueInteractable>();
         dialInt8.Interactable[0] = false;
         dialInt8.Interacted[0] = true;
 
