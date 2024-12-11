@@ -20,9 +20,13 @@ public class SaveSystem
         string saveFile = Application.persistentDataPath + "/save" + ".save";
         return saveFile;
     }
-    public static void Erase()
+    public static void EraseDialogue()
     {
-        _saveData.InkSaveData.state = "";
+        if (GameManager.Instance.InkController)
+        {
+            GameManager.Instance.InkController.Erase(_saveData.InkSaveData);
+        }
+
         File.WriteAllText(SaveFileName(), JsonUtility.ToJson(_saveData, true));
     }
     public static void Save()

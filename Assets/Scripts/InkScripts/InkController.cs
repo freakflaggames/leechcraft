@@ -16,7 +16,7 @@ public class InkController : MonoBehaviour {
 		story.BindExternalFunction ("CutToBlack",() => {CutToBlack();});
 		story.BindExternalFunction ("FadeToBlack",() => {FadeToBlack();});
 		story.BindExternalFunction ("FadeFromBlack",() => {FadeFromBlack();});
-		SaveSystem.LoadDialogue();
+		//SaveSystem.LoadDialogue();
 	}
 
 	void Start()
@@ -172,6 +172,11 @@ public class InkController : MonoBehaviour {
 			print("loaded " + data.state);
         }
 	}
+	public void Erase(InkSaveData data)
+    {
+		data.state = "";
+		print("erased " + data.state);
+    }
 
 	[SerializeField]
 	public TextAsset inkJSONAsset = null;

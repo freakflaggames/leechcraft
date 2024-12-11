@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
-        SaveSystem.Erase();
+        SaveSystem.EraseDialogue();
         FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
         StartCoroutine(WaitToLoadScene(0.5f, "CharacterCreation"));
     }
