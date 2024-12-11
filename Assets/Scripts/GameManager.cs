@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void QuitToMenu()
     {
+        Time.timeScale = 1;
         PauseMenu.SetActive(false);
         SceneManager.LoadScene("MainMenu");
         Destroy(FadeVFX.Instance.gameObject);
