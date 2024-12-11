@@ -57,7 +57,9 @@ public class QuestSummary : MonoBehaviour
                 Objective[2].SetActive(false);
                 Objective[3].SetActive(true);
                 DialogueInteractable AddaDialInt = Adda.GetComponent<DialogueInteractable>();
-                AddaDialInt.Interactable[1] = true;
+
+                if (!jankyfixDone)
+                    AddaDialInt.Interactable[1] = true;
             }
         }
 
@@ -89,14 +91,10 @@ public class QuestSummary : MonoBehaviour
     {
         //make stock items interactable & skip remedy dialogue with the first 2 objects
         DialogueInteractable dialInt0 = StockItem[0].GetComponent<DialogueInteractable>();
-        dialInt0.Interactable[0] = false;
         dialInt0.Interactable[1] = true;
-        dialInt0.Interacted[0] = true;
 
         DialogueInteractable dialInt1 = StockItem[1].GetComponent<DialogueInteractable>();
-        dialInt1.Interactable[0] = false;
         dialInt1.Interactable[1] = true;
-        dialInt1.Interacted[0] = true;
 
         DialogueInteractable dialInt2 = StockItem[2].GetComponent<DialogueInteractable>();
         dialInt2.Interactable[0] = true;
@@ -107,8 +105,26 @@ public class QuestSummary : MonoBehaviour
         DialogueInteractable dialInt4 = StockItem[4].GetComponent<DialogueInteractable>();
         dialInt4.Interactable[0] = true;
 
+        //REMEDIES
+        DialogueInteractable dialInt5 = Remedy[0].GetComponent<DialogueInteractable>();
+        dialInt5.Interactable[0] = false;
+        dialInt5.Interacted[0] = true;
+
+        DialogueInteractable dialInt6 = Remedy[1].GetComponent<DialogueInteractable>();
+        dialInt6.Interactable[0] = false;
+        dialInt6.Interacted[0] = true;
+
+        DialogueInteractable dialInt7 = Remedy[2].GetComponent<DialogueInteractable>();
+        dialInt7.Interactable[0] = false;
+        dialInt7.Interacted[0] = true;
+
+        DialogueInteractable dialInt8 = Remedy[1].GetComponent<DialogueInteractable>();
+        dialInt8.Interactable[0] = false;
+        dialInt8.Interacted[0] = true;
+
+
         // set adda and everich inactive if they left. make them uninteractable if not
-        if((bool)GameManager.Instance.InkController.story.variablesState["addaDead"])
+        if ((bool)GameManager.Instance.InkController.story.variablesState["addaDead"])
         {
             Adda.SetActive(false);
             Everich.SetActive(false);
