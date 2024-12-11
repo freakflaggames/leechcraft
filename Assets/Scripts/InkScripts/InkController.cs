@@ -81,9 +81,12 @@ public class InkController : MonoBehaviour {
 
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton (Choice choice) {
-		story.ChooseChoiceIndex (choice.index);
-		SaveSystem.SaveDialogue();
-		RefreshView();
+		if (!GameManager.Instance.paused)
+        {
+			story.ChooseChoiceIndex(choice.index);
+			SaveSystem.SaveDialogue();
+			RefreshView();
+		}
 	}
 
 	// Creates a textbox showing the the line of text

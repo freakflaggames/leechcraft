@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public PlayerController Player;
     public InkController InkController;
     public GameObject PauseMenu;
-    bool paused;
+    public bool paused;
+    public bool dialogue;
     private void Awake()
     {
         Instance = this;
@@ -23,6 +24,13 @@ public class GameManager : MonoBehaviour
     {
         //SceneManager.LoadScene("LeechHouse_1");
         //SaveSystem.Load();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseResume();
+        }
     }
     public void StartDialogue(string knotName)
     {
@@ -37,11 +45,21 @@ public class GameManager : MonoBehaviour
         {
             PauseMenu.SetActive(true);
             paused = true;
+            Time.timeScale = 0;
         }
         else
         {
             PauseMenu.SetActive(false);
             paused = false;
+            Time.timeScale = 1;
         }
+    }
+
+    public void QuitToMenu()
+    {
+        PauseMenu.SetActive(false);
+        SceneManager.LoadScene("MainMenu");
+        Destroy(FadeVFX.Instance.gameObject);
+        Destroy(gameObject);
     }
 }

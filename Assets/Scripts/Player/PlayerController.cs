@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
                 NavigationTarget.transform.position = new Vector3(hit.point.x, 0.1f, hit.point.z);
             }
         }
-        else if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, GroundMask) && !GameManager.Instance.InkController.gameObject.activeInHierarchy)
+        else if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, GroundMask) && !GameManager.Instance.InkController.gameObject.activeInHierarchy && !GameManager.Instance.paused)
         {
             if (Input.GetMouseButtonDown(0))
             {

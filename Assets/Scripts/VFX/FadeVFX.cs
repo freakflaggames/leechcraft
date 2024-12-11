@@ -13,7 +13,6 @@ public class FadeVFX : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         Instance = this;
-        Fade(0, 0, 1);
     }
 
     public void Fade(float fadeInTime, float holdTime, float fadeOutTime)
