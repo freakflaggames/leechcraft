@@ -82,6 +82,7 @@ public class InGameMenus : MonoBehaviour
         else if (page == 1)
         {
             UICanvas.SetActive(false);
+            GameManager.Instance.paused = false;
         }
     }
 
@@ -90,6 +91,7 @@ public class InGameMenus : MonoBehaviour
         if (page == 0)
         {
             UICanvas.SetActive(false);
+            GameManager.Instance.paused = false;
         }
         else if (page == 1)
         {

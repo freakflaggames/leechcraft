@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public PlayerController Player;
     public InkController InkController;
     public GameObject PauseMenu;
+    public GameObject InGameMenu;
     public bool paused;
     public bool dialogue;
     private void Awake()
@@ -31,6 +32,10 @@ public class GameManager : MonoBehaviour
         {
             PauseResume();
         }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            OpenInGameMenu();
+        }
     }
     public void StartDialogue(string knotName)
     {
@@ -38,6 +43,19 @@ public class GameManager : MonoBehaviour
         InkController.knot = knotName;
         InkController.RemoveChildren();
         InkController.StartStory();
+    }
+    public void OpenInGameMenu()
+    {
+        if (!paused)
+        {
+            InGameMenu.SetActive(true);
+            paused = true;
+        }
+        else
+        {
+            InGameMenu.SetActive(false);
+            paused = false;
+        }
     }
     public void PauseResume()
     {
