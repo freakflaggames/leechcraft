@@ -92,6 +92,7 @@ public class CharacterCreation : MonoBehaviour
             state["yellowBile"] = yellowBileBGBonus.humor;
             state["blackBile"] = blackBileBGBonus.humor;
             state["phlegm"] = phlegmBGBonus.humor;
+            SaveSystem.SaveDialogue();
 
             StartCoroutine(MainMenu.WaitToLoadScene(0.5f, "LeechHouse_1"));
             FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
