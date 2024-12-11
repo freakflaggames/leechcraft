@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioSource audioFoot;
     [SerializeField] float stepRate;
 
-    NavMeshAgent navMeshAgent;
-
     private void Awake()
     {
         if (GameManager.Instance)
@@ -41,10 +39,6 @@ public class PlayerController : MonoBehaviour
         input = GetComponent<PlayerInput>();
 
         NavigationTarget = Instantiate(NavigationTarget);
-
-        //Hannah: added stuff for step and stored the navmeshagent call so we don't get component in update
-        stepRateSet = stepRate;
-        navMeshAgent = GetComponent<NavMeshAgent>();
     }
     private void Update()
     {
@@ -59,7 +53,7 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetMouseButton(0))
             {
-                navMeshAgent.SetDestination(hit.point);
+                GetComponent<NavMeshAgent>().SetDestination(hit.point);
                 NavigationTarget.transform.position = new Vector3(hit.point.x, 0.1f, hit.point.z);
             }
         }
@@ -71,12 +65,12 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetMouseButton(0))
             {
-                navMeshAgent.SetDestination(hitInfo.point);
+                GetComponent<NavMeshAgent>().SetDestination(hitInfo.point);
                 NavigationTarget.transform.position = new Vector3(hitInfo.point.x, 0.1f, hitInfo.point.z);
             }
         }
 
-        if (Vector3.Distance(transform.position, navMeshAgent.destination) <= .5f && TargetInteractable != null)
+        if (Vector3.Distance(transform.position,GetComponent<NavMeshAgent>().destination) <= .5f && TargetInteractable != null)
         {
             if (TargetInteractable.GetComponent<IInteractable>() != null)
             {
@@ -89,27 +83,6 @@ public class PlayerController : MonoBehaviour
 
             TargetInteractable = null;
         }
-
-        //Hannah: step stuff for nav mesh movement
-
-        if(navMeshAgent.remainingDistance > 0f) 
-        {
-            //Hannah: don't mind me just adding step audio stuff yay
-            //stepRateSet = stepRate;
-
-            stepCoolDown -= Time.fixedDeltaTime;
-
-            if (stepCoolDown < 0f)
-            {
-                audioFoot.pitch = 1f + Random.Range(-0.3f, 0.1f);
-                audioFoot.Play();
-                stepCoolDown = stepRateSet;
-            }
-
-            //Hannah: end of step audio stuff
-        }
-        else
-            audioFoot.Stop();
     }
 
     //Hannah: changed to fixed update so the step rate for the sounds would be consistent 
