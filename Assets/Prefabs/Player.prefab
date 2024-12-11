@@ -170,7 +170,7 @@ MonoBehaviour:
   Interaction: {fileID: 6796294951580890699}
   PlayerInventory: {fileID: 7455966548025921159}
   audioFoot: {fileID: 8416777726574893344}
-  stepRate: 1.5
+  stepRate: 0.5
 --- !u!114 &6796294951580890699
 MonoBehaviour:
   m_ObjectHideFlags: 0
