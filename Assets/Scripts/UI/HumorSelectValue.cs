@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class HumorSelectValue : MonoBehaviour
 {
     [SerializeField] HumorPoints hp;
-    int humor;
+    public int humor;
     public GameObject increaseButtonObj, decreaseButtonObj, humorTextObj;
     [SerializeField] GameObject bonusText;
     Button increaseButton, decreaseButton;

@@ -88,10 +88,10 @@ public class CharacterCreation : MonoBehaviour
             state["apothecary"] = apothecary;
             state["barber"] = barber;
             state["charlatan"] = charlatan;
-            state["blood"] = bloodValue;
-            state["yellowBile"] = yellowBileValue;
-            state["blackBile"] = blackBileValue;
-            state["phlegm"] = phlegmValue;
+            state["blood"] = bloodBGBonus.humor;
+            state["yellowBile"] = yellowBileBGBonus.humor;
+            state["blackBile"] = blackBileBGBonus.humor;
+            state["phlegm"] = phlegmBGBonus.humor;
 
             StartCoroutine(MainMenu.WaitToLoadScene(0.5f, "LeechHouse_1"));
             FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
