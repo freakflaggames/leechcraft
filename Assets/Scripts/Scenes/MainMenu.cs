@@ -32,6 +32,7 @@ public class MainMenu : MonoBehaviour
         FadeVFX.Instance.Fade(0.5f, 0, 0.5f);
         StartCoroutine(WaitToLoadScene(0.5f, "LeechHouse_1"));
         SaveSystem.LoadDialogue();
+        GameManager.Instance.InGameMenu.transform.parent.GetComponent<InGameMenus>().UpdateUI();
     }
     public static IEnumerator WaitToLoadScene(float time, string sceneName)
     {
