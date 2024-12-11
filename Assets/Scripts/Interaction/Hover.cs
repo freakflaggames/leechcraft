@@ -5,18 +5,43 @@ using UnityEngine;
 
 public class Hover : MonoBehaviour
 {
-    [SerializeField] Material baseMat;
-    [SerializeField] Material outline;
+    [SerializeField] Material baseMat, outline;
+    [SerializeField] Renderer targetObject;
+    [SerializeField] bool multiple = false;
+    [SerializeField] List<Renderer> targets = new List<Renderer>();
+    [SerializeField] float newWeight;
 
     private void OnMouseOver()
     {
-        GetComponent<Renderer>().material = outline;
-        Debug.Log("mouseover");
+        if (targetObject != null && !multiple)
+        {
+            outline.SetFloat("_Weight", newWeight);
+            targetObject.material = outline;
+        }
+        else
+        {
+            foreach (Renderer r in targets)
+            {
+                outline.SetFloat("_Weight", newWeight);
+                r.material = outline;
+            }
+        }
+
     }
 
     private void OnMouseExit()
     {
-        GetComponent<Renderer>().material = baseMat;
-        Debug.Log("mouse exit");
+        if (targetObject != null && !multiple)
+        {
+            targetObject.material = baseMat;
+        }
+        else
+        {
+            foreach (Renderer r in targets)
+            {
+                r.material = baseMat;
+            }
+        }
+
     }
 }
