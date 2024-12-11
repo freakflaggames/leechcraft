@@ -18,11 +18,35 @@ public class Hover : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            outline.SetFloat("_Weight", 0);
-            targetObject.material = outline;
+            if (Multiples)
+            {
+                foreach (var target in targets)
+                {
+                    outline.SetFloat("_Weight", newWeight);
+                    target.material = outline;
+                }
+            }
+            else
+            {
+                outline.SetFloat("_Weight", 0);
+                targetObject.material = outline;
+            }
         }
-        else
-           targetObject.material = baseMat;
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            if (Multiples)
+            {
+                foreach (var target in targets)
+                {
+                    target.material = baseMat;
+                }
+            }
+            else
+            {
+                targetObject.material = baseMat;
+            }
+        }
     }
 
     private void OnMouseOver()

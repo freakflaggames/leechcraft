@@ -10598,8 +10598,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.42451
+  m_Center: {x: -0.57549, y: 0, z: 0}
 --- !u!114 &708647494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30706,7 +30706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMat: {fileID: 2100000, guid: faf8617475f0d8f46925928ab8172ad9, type: 2}
   outline: {fileID: 2100000, guid: ef9a58930d47405489cd765316fef186, type: 2}
-  targetObject: {fileID: 912341607}
+  targetObject: {fileID: 0}
   targets:
   - {fileID: 912341607}
   - {fileID: 651107905}
